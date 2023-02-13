@@ -1,0 +1,1743 @@
+
+                <html lang="en" class="simpread-font simpread-theme-root" style='height: 100%;'>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+                        <meta name="author" content="Kenshin"/>
+                        <meta name="description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展" />
+                        <meta name="keywords" content="Chrome extension, Chrome 扩展, 阅读模式, 沉浸式阅读, 简悦, 简阅, read mode, reading mode, reader view, firefox, firefox addon, userscript, safari, opera, tampermonkey"/>
+                        <meta name="thumbnail" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:title" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <meta property="og:type" content="website">
+                        <meta property="og:local" content="zh_CN"/>
+                        <meta property="og:url" content="http://ksria.com/simpread"/>
+                        <meta property="og:image" content="https://simpread-1254315611.cos.ap-shanghai.myqcloud.com/static/introduce-2.png"/>
+                        <meta property="og:image:type" content="image/png"/>
+                        <meta property="og:image:width" content="960"/>
+                        <meta property="og:image:height" content="355"/>
+                        <meta property="og:site_name" content="http://ksria.com/simpread"/>
+                        <meta property="og:description" content="简悦 SimpRead - 如杂志般沉浸式阅读体验的扩展"/>
+                        <style type="text/css">.simpread-font{font:300 16px/1.8 -apple-system,PingFang SC,Microsoft Yahei,Lantinghei SC,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#333;text-rendering:optimizelegibility;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}.simpread-hidden{display:none}.simpread-read-root{display:-webkit-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;margin:0;top:-1000px;left:0;width:100%;z-index:2147483646;overflow-x:hidden;opacity:0;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}.simpread-read-root-show{top:0}.simpread-read-root-hide{top:1000px}sr-read{display:-webkit-flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-flow:column nowrap;flex-flow:column;margin:20px 20%;min-width:400px;min-height:400px;text-align:center}read-process{position:fixed;top:0;left:0;height:3px;width:100%;background-color:#64b5f6;-webkit-transition:width 2s;transition:width 2s;z-index:20000}sr-rd-content-error{display:block;position:relative;margin:0;margin-bottom:30px;padding:25px;background-color:rgba(0,0,0,.05)}sr-rd-footer{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column;font-size:14px}sr-rd-footer,sr-rd-footer-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}sr-rd-footer-group{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-rd-footer-line{width:100%;border-top:1px solid #e0e0e0}sr-rd-footer-text{min-width:150px}sr-rd-footer-copywrite{margin:10px 0 0;color:inherit}sr-rd-footer-copywrite abbr{-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-decoration:none}sr-rd-footer-copywrite .second{margin:10px 0}sr-rd-footer-copywrite .third a:hover{border:none!important}sr-rd-footer-copywrite .third a:first-child{margin-right:50px}sr-rd-footer-copywrite .sr-icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:33px;height:33px;opacity:.8;-webkit-transition:opacity .5s ease;transition:opacity .5s ease;cursor:pointer}sr-rd-footer-copywrite .sr-icon:hover{opacity:1}sr-rd-footer-copywrite a,sr-rd-footer-copywrite a:link,sr-rd-footer-copywrite a:visited{margin:0;padding:0;color:inherit;background-color:transparent;font-size:inherit!important;line-height:normal;text-decoration:none;vertical-align:baseline;vertical-align:initial;border:none!important;box-sizing:border-box}sr-rd-footer-copywrite a:focus,sr-rd-footer-copywrite a:hover,sr-rd-footer a:active{color:inherit;text-decoration:none;border-bottom:1px dotted!important}.simpread-blocks{text-decoration:none!important}.simpread-blocks *{margin:0}.simpread-blocks a{padding:0;text-decoration:none!important}.simpread-blocks img{margin:0;padding:0;border:0;background:transparent;box-shadow:none}.simpread-focus-root{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,92%,.9);z-index:2147483645;opacity:0;-webkit-transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms;transition:opacity 1s cubic-bezier(.23,1,.32,1) 0ms}.simpread-focus-highlight{position:relative;box-shadow:0 0 0 20px #fff;background-color:#fff;overflow:visible;z-index:2147483646}.sr-controlbar-bg sr-rd-crlbar,.sr-controlbar-bg sr-rd-crlbar fab{z-index:2147483647}sr-rd-crlbar.controlbar{position:fixed;right:0;bottom:0;width:100px;height:100%;opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}sr-rd-crlbar.controlbar:hover{opacity:1}sr-rd-crlbar fap *{box-sizing:border-box}@media (max-height:620px){fab{zoom:.8}}@media (max-height:783px){dialog-gp dialog-content{max-height:580px}dialog-gp dialog-footer{border-top:1px solid #e0e0e0}}.simpread-highlight-selector{outline:3px dashed #1976d2!important;cursor:pointer!important}.simpread-highlight-controlbar,.simpread-highlight-selector{background-color:#fafafa!important;opacity:.8!important;-webkit-transition:opacity .5s ease!important;transition:opacity .5s ease!important}.simpread-highlight-controlbar{position:relative!important;border:3px dashed #1976d2!important}simpread-highlight,sr-snapshot-ctlbar{position:fixed;top:0;left:0;right:0;padding:15px;height:50px;background-color:rgba(50,50,50,.9);box-shadow:0 2px 5px rgba(0,0,0,.26);box-sizing:border-box;z-index:2147483640}simpread-highlight,sr-highlight-ctl,sr-snapshot-ctlbar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sr-highlight-ctl{margin:0 5px;width:50px;height:20px;color:#fff;background-color:#1976d2;border-radius:4px;box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);cursor:pointer}toc-bg{position:fixed;left:0;top:0;width:50px;height:200px;font-size:medium}toc-bg:hover{z-index:3}.toc-bg-hidden{opacity:0;-webkit-transition:opacity .5s ease;transition:opacity .5s ease}.toc-bg-hidden:hover{opacity:1;z-index:3}.toc-bg-hidden:hover toc{width:180px}toc *{all:unset}toc{position:fixed;left:0;top:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding:10px;width:0;max-width:200px;max-height:500px;overflow-x:hidden;overflow-y:hidden;cursor:pointer;border:1px solid hsla(0,0%,62%,.22);-webkit-transition:width .5s;transition:width .5s}toc:hover{overflow-y:auto}toc.mini:hover{width:200px!important}toc::-webkit-scrollbar{width:3px}toc::-webkit-scrollbar-thumb{border-radius:10px;background-color:hsla(36,2%,54%,.5)}toc outline{position:relative;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;padding:2px 0;min-height:21px;line-height:21px;text-align:left}toc outline a,toc outline a:active,toc outline a:focus,toc outline a:visited{display:block;width:100%;color:inherit;font-size:11px;text-decoration:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}toc outline a:hover{font-weight:700!important}toc outline a.toc-outline-theme-dark,toc outline a.toc-outline-theme-night{color:#fff!important}.toc-level-h1{padding-left:5px}.toc-level-h2{padding-left:15px}.toc-level-h3{padding-left:25px}.toc-level-h4{padding-left:35px}.toc-outline-active{border-left:2px solid #f44336}toc outline active{position:absolute;left:0;top:0;bottom:0;padding:0 0 0 3px;border-left:2px solid #e8e8e8}sr-kbd{background:-webkit-gradient(linear,0 0,0 100%,from(#fff785),to(#ffc542));border:1px solid #e3be23;-o-border-image:none;border-image:none;-o-border-image:initial;border-image:initial;position:absolute;left:0;padding:1px 3px 0;font-size:11px!important;font-weight:700;box-shadow:0 3px 7px 0 rgba(0,0,0,.3);overflow:hidden;border-radius:3px}.sr-kbd-a{position:relative}kbd-mapping{position:fixed;left:5px;bottom:5px;-ms-flex-flow:row;flex-flow:row;width:250px;height:500px;background-color:#fff;border:1px solid hsla(0,0%,62%,.22);box-shadow:0 2px 5px rgba(0,0,0,.26);border-radius:3px}kbd-mapping,kbd-maps{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}kbd-maps{margin:40px 0 20px;width:100%;overflow-x:auto}kbd-maps::-webkit-scrollbar-thumb{background-clip:padding-box;border-radius:10px;border:2px solid transparent;background-color:rgba(85,85,85,.55)}kbd-maps::-webkit-scrollbar{width:10px;-webkit-transition:width .7s cubic-bezier(.4,0,.2,1);transition:width .7s cubic-bezier(.4,0,.2,1)}kbd-mapping kbd-map-title{position:absolute;margin:5px 0;width:100%;font-size:14px;font-weight:700}kbd-maps-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}kbd-maps-title{margin:5px 0;padding-left:53px;font-size:12px;font-weight:700}kbd-map kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}kbd-map kbd-name{display:inline-block;text-align:right;width:50px}kbd-map kbd-desc{padding-left:3px}sharecard-bg{position:fixed;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:rgba(0,0,0,.4);z-index:2147483647}sharecard{max-width:450px;background-color:#64b5f6}sharecard,sharecard-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-head{margin:25px;color:#fff;border-radius:10px;box-shadow:0 2px 6px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.15)}sharecard-card{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sharecard-card,sharecard-top{display:-webkit-box;display:-ms-flexbox;display:flex}sharecard-top{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:65px;background-color:#fff;color:#878787;font-size:25px;font-weight:500;border-top-left-radius:10px;border-top-right-radius:10px}sharecard-top span.logos{display:block;width:48px;height:48px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABU1BMVEUAAAAnNJMnNZI3Q5onNJInNJMnNJInNJMnNJI8SJ0tOZY/S55EUKAoNJI6RpwoNJNIU6InNJInNJImNJI7SJwmNJJ2fLUiMJFKVaNCTJ9faK1HUaJOWKVSXaUnNJNYY6pye7cmM5JXYKhwebMjMI8mL4719fW9vb0oNZP/UlLz8/QqN5TAwMAnNJPv7+/Pz8/q6+/p6enNzc3Kysry8vMsOJXc3env7/LU1uXo29vR0dHOzs7ExMTwjo73bW37XV3Aj1TCYELl5u3n5+fW2Obn6O7f4OrZ2+g0QJkxPpgvO5bh4uvS1OTP0ePCwsJQW6ZLVqTs7fHd3d3V1dXqv79VX6lET6A1TIxXUIBSgHxWQnpelHf+WVnopkXqbC7j5Ozi4uLDw8NGUaFATJ9SgH3r6+vGyd7BxNva2trX19ejqM2gpczHx8dze7Zha67Z2dlTgH1aXQeSAAAAJnRSTlMA6ff+497Y8NL+/fv49P379sqab/BeOiX06tzVy8m/tKqpalA7G6oKj0EAAAJlSURBVEjHndNXWxpBFIDhcS2ICRLAkt4Dx4WhLk0E6R0MYoIISrWX5P9f5cwSIRC2+T1czMV5n2FnZwn2eWONUqCAv3H2Uf5Ra1hx4+0WEXtDQW0fCPYJ1EffEfIV4CSROAE4jsePoTFsNmTJF/IeIHF2lgCIn57GodlqDWXBK7IwBYatVlMWFAildPKX7I3m74Z9fsCiQChoimoFQAz04Ad2gH1n9fv9n9hgMNDr9euLWD6fLxQKxaLfb7dTSlahbFVdEPwIQtrAihZQgyKCtCagbQe3xh0QFMgy5MR11+ewYY5/qlZ7vT2xu93ULKjbFLpiUxnIIwjgKmVTLDUFXMrAi2NJWCRLIthTBo4xyOLKpwyqU6CuDCI41hFBCVdOhyLw4FgJ1skCAiyl9BSHbCorgo6VJXTru5hrVCQS8Yr5xLzX59YJSFpVFwD9U0BGC3hGdFpATgRupTGe9R9I1b1ePBvXKDyvq/O/44LT4/E4BUbSCAwj8Evq6HlnOBprx6JhJz8Gktc7xeaP9ndY+0coQvCccFBD4JW60UIY50ciLOAODAQRVOeCHm4Q3Xks6uRDY+CQ+AR4T2wMYh6+jMCIQOp78CFoj0H7EQgIuhI3dGaHCrwgADwCPjJvA372GRigCJg49FUdk3D87pq3zp4SA5zc1Zh9DxfwkpjgUg5Mv+lbeE3McC8Lpu7SA3wk2xzcqL2tN5DfIsQC8HB7UamUy6FQOpTO5QKBQDZbKnWSyUzGjdWCwaDA8+7Le4BNgm3qQGWchYh9s5hNq6wVbBlbwhZYOp3OYOA4zmgEypnM2zj8ByIdedKrH8vDAAAAAElFTkSuQmCC");zoom:.8}sharecard-content{padding:15px;max-height:500px;font-size:20px;text-align:justify;background-color:#2196f3;overflow-x:hidden;overflow-y:auto}sharecard-via{padding:10px;font-size:10px;background-color:#2196f3}sharecard-footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-right:5px;height:100px;background-color:#fff;color:#878787;font-size:15px;font-weight:500;border-bottom-left-radius:10px;border-bottom-right-radius:10px}sharecard-footer,sharecard-footer div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}sharecard-footer span.qrcode{display:block;width:100px;height:100px;margin:5px;background-repeat:no-repeat;background-position:50%;background-image:url("data:image/png;base64,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")}sharecard-control{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0 19px;height:80px;background-color:#fff}simpread-snapshot{width:100%;height:100%;cursor:move;z-index:2147483645}simpread-snapshot,sr-mask{position:fixed;left:0;top:0}sr-mask{background-color:rgba(0,0,0,.1)}.simpread-feedback,.simpread-urlscheme{position:fixed;right:20px;bottom:20px;z-index:2147483646}simpread-feedback,simpread-urlscheme{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:20px 20px 0;width:500px;color:rgba(51,51,51,.87);background-color:#fff;border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.26);overflow:hidden;-webkit-transform-origin:bottom;transform-origin:bottom;-webkit-transition:all .6s ease;transition:all .6s ease}simpread-feedback *,simpread-urlscheme *{font-size:12px!important;box-sizing:border-box}simpread-feedback.active,simpread-urlscheme.active{-webkit-animation-name:srFadeInUp;animation-name:srFadeInUp;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback.hide,simpread-urlscheme.hide{-webkit-animation-name:srFadeInDown;animation-name:srFadeInDown;-webkit-animation-duration:.45s;animation-duration:.45s;-webkit-animation-fill-mode:both;animation-fill-mode:both}simpread-feedback sr-fb-label,simpread-urlscheme sr-urls-label{width:100%}simpread-feedback sr-fb-head,simpread-urlscheme sr-urls-head{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:5px;width:100%}simpread-feedback sr-fb-content,simpread-urlscheme sr-urls-content{margin-bottom:5px;width:100%}simpread-feedback sr-urls-footer,simpread-urlscheme sr-urls-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-fb-a,simpread-urlscheme sr-urls-a{color:#2163f7;cursor:pointer}simpread-feedback text-field-state,simpread-urlscheme text-field-state{border-top:none rgba(34,101,247,.8)!important;border-left:none rgba(34,101,247,.8)!important;border-right:none rgba(34,101,247,.8)!important;border-bottom:2px solid rgba(34,101,247,.8)!important}simpread-feedback switch,simpread-urlscheme switch{margin-top:0!important}@-webkit-keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes srFadeInUp{0%{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}@keyframes srFadeInDown{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}to{opacity:0;-webkit-transform:translateY(100px);transform:translateY(100px)}}simpread-feedback sr-fb-head{font-weight:700}simpread-feedback sr-fb-content{-webkit-box-orient:vertical;-ms-flex-direction:column;flex-direction:column}simpread-feedback sr-fb-content,simpread-feedback sr-fb-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}simpread-feedback sr-fb-footer{-webkit-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%}simpread-feedback sr-close{position:absolute;right:20px;cursor:pointer;-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s;z-index:200}simpread-feedback sr-close:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}simpread-feedback sr-stars i{margin-right:10px;cursor:pointer}simpread-feedback sr-stars i svg{-webkit-transition:all 1s cubic-bezier(.23,1,.32,1) .1s;transition:all 1s cubic-bezier(.23,1,.32,1) .1s}simpread-feedback sr-stars i svg:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}simpread-feedback sr-stars i.active svg{-webkit-transform:rotate(0) scale(1);transform:rotate(0) scale(1)}simpread-feedback sr-emojis{display:block;height:100px;overflow:hidden}simpread-feedback sr-emoji{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.3s;transition:.3s}simpread-feedback sr-emoji>svg{margin:15px 0;width:70px;height:70px;-ms-flex-negative:0;flex-shrink:0}simpread-feedback sr-stars-footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:10px 0 20px}</style>
+                        <style type="text/css">.simpread-theme-root{font-size:62.5%!important}sr-rd-content,sr-rd-desc,sr-rd-title{width:100%}sr-rd-title{display:-webkit-box;margin:1em 0 .5em;overflow:hidden;text-overflow:ellipsis;text-rendering:optimizelegibility;-webkit-line-clamp:3;-webkit-box-orient:vertical}sr-rd-content{text-align:left;word-break:break-word}sr-rd-desc{text-align:justify;line-height:2.4;margin:0 0 1.2em;box-sizing:border-box}sr-rd-content{font-size:25.6px;font-size:1.6rem;line-height:1.6}sr-rd-content h1,sr-rd-content h1 *,sr-rd-content h2,sr-rd-content h2 *,sr-rd-content h3,sr-rd-content h3 *,sr-rd-content h4,sr-rd-content h4 *,sr-rd-content h5,sr-rd-content h5 *,sr-rd-content h6,sr-rd-content h6 *{word-break:break-all}sr-rd-content div,sr-rd-content p{display:block;float:inherit;line-height:1.6;font-size:25.6px;font-size:1.6rem}sr-rd-content div,sr-rd-content p,sr-rd-content pre,sr-rd-content sr-blockquote{margin:0 0 1.2em;word-break:break-word}sr-rd-content a{padding:0 5px;vertical-align:baseline;vertical-align:initial}sr-rd-content a,sr-rd-content a:link{color:inherit;font-size:inherit;font-weight:inherit;border:none}sr-rd-content a:hover{background:transparent}sr-rd-content img{margin:10px;padding:5px;max-width:100%;background:#fff;border:1px solid #bbb;box-shadow:1px 1px 3px #d4d4d4}sr-rd-content figcaption{text-align:center;font-size:14px}sr-rd-content sr-blockquote{display:block;position:relative;padding:15px 25px;text-align:left;line-height:inherit}sr-rd-content sr-blockquote:before{position:absolute}sr-rd-content sr-blockquote *{margin:0;font-size:inherit}sr-rd-content table{width:100%;margin:0 0 1.2em;word-break:keep-all;word-break:normal;overflow:auto;border:none}sr-rd-content table td,sr-rd-content table th{border:none}sr-rd-content ul{margin:0 0 1.2em;margin-left:1.3em;padding:0;list-style:disc}sr-rd-content ol{list-style:decimal;margin:0;padding:0}sr-rd-content ol li,sr-rd-content ul li{font-size:inherit;list-style:disc;margin:0 0 1.2em}sr-rd-content ol li{list-style:decimal;margin-left:1.3em}sr-rd-content ol li *,sr-rd-content ul li *{margin:0;text-align:left;text-align:initial}sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em}sr-rd-content li ul{list-style:circle}sr-rd-content pre{font-family:Consolas,Monaco,Andale Mono,Source Code Pro,Liberation Mono,Courier,monospace;display:block;padding:15px;line-height:1.5;word-break:break-all;word-wrap:break-word;white-space:pre;overflow:auto}sr-rd-content pre,sr-rd-content pre *,sr-rd-content pre div{font-size:17.6px;font-size:1.1rem}sr-rd-content li pre code,sr-rd-content p pre code,sr-rd-content pre{background-color:transparent;border:none}sr-rd-content pre code{margin:0;padding:0}sr-rd-content pre code,sr-rd-content pre code *{font-size:17.6px;font-size:1.1rem}sr-rd-content pre p{margin:0;padding:0;color:inherit;font-size:inherit;line-height:inherit}sr-rd-content li code,sr-rd-content p code{margin:0 4px;padding:2px 4px;font-size:17.6px;font-size:1.1rem}sr-rd-content mark{margin:0 5px;padding:2px;background:#fffdd1;border-bottom:1px solid #ffedce}.sr-rd-content-img{width:90%;height:auto}.sr-rd-content-img-load{width:48px;height:48px;margin:0;padding:0;border-style:none;border-width:0;background-repeat:no-repeat;background-image:url(data:image/gif;base64,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)}.sr-rd-content-center{text-align:center;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;-webkit-box-orient:vertical}.sr-rd-content-center-small{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.sr-rd-content-center-small img{margin:0;padding:0;border:0;box-shadow:none}img.simpread-img-broken{cursor:pointer}.sr-rd-content-nobeautify{margin:0;padding:0;border:0;box-shadow:0 0 0}sr-rd-mult{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin:0 0 16px;padding:16px 0 24px;width:100%;background-color:#fff;border-radius:4px;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15)}sr-rd-mult:hover{-webkit-transition:all .45s 0ms;transition:all .45s 0ms;box-shadow:1px 1px 8px rgba(0,0,0,.16)}sr-rd-mult sr-rd-mult-content{padding:0 16px;overflow:auto}sr-rd-mult sr-rd-mult-avatar,sr-rd-mult sr-rd-mult-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}sr-rd-mult sr-rd-mult-avatar{-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 15px}sr-rd-mult sr-rd-mult-avatar span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;max-width:75px;overflow:hidden;text-overflow:ellipsis;text-align:left;font-size:16px;font-size:1rem}sr-rd-mult sr-rd-mult-avatar img{margin-bottom:0;max-width:50px;max-height:50px;width:50px;height:50px;border-radius:50%}sr-rd-mult sr-rd-mult-content img{max-width:80%}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center{margin:0}sr-page{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}</style>
+                        <style type="text/css">sr-rd-theme-github{display:none}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{position:relative;margin-top:1em;margin-bottom:1pc;font-weight:700;line-height:1.4;text-align:left;color:#363636}sr-rd-content h1{padding-bottom:.3em;font-size:57.6px;font-size:3.6rem;line-height:1.2}sr-rd-content h2{padding-bottom:.3em;font-size:44.8px;font-size:2.8rem;line-height:1.225}sr-rd-content h3{font-size:38.4px;font-size:2.4rem;line-height:1.43}sr-rd-content h4{font-size:32px;font-size:2rem}sr-rd-content h5,sr-rd-content h6{font-size:25.6px;font-size:1.6rem}sr-rd-content h6{color:#777}sr-rd-content ol,sr-rd-content ul{list-style-type:disc;padding:0;padding-left:2em}sr-rd-content ol ol,sr-rd-content ul ol{list-style-type:lower-roman}sr-rd-content ol ol ol,sr-rd-content ol ul ol,sr-rd-content ul ol ol,sr-rd-content ul ul ol{list-style-type:lower-alpha}sr-rd-content table{width:100%;overflow:auto;word-break:normal;word-break:keep-all}sr-rd-content table th{font-weight:700}sr-rd-content table td,sr-rd-content table th{padding:6px 13px;border:1px solid #ddd}sr-rd-content table tr{background-color:#fff;border-top:1px solid #ccc}sr-rd-content table tr:nth-child(2n){background-color:#f8f8f8}sr-rd-content sr-blockquote{border-left:4px solid #ddd}.simpread-theme-root{background-color:#fff;color:#333}sr-rd-title{font-family:PT Sans,SF UI Display,\.PingFang SC,PingFang SC,Neue Haas Grotesk Text Pro,Arial Nova,Segoe UI,Microsoft YaHei,Microsoft JhengHei,Helvetica Neue,Source Han Sans SC,Noto Sans CJK SC,Source Han Sans CN,Noto Sans SC,Source Han Sans TC,Noto Sans CJK TC,Hiragino Sans GB,sans-serif;font-size:54.4px;font-size:3.4rem;font-weight:700;line-height:1.3}sr-rd-desc{position:relative;margin:0;margin-bottom:30px;padding:25px;padding-left:56px;font-size:28.8px;font-size:1.8rem;color:#777;background-color:rgba(0,0,0,.05);box-sizing:border-box}sr-rd-desc:before{content:"\201C";position:absolute;top:-28px;left:16px;font-size:80px;font-family:Arial;color:rgba(0,0,0,.15)}sr-rd-content,sr-rd-content *,sr-rd-content div,sr-rd-content p{color:#363636;font-weight:400;line-height:1.8}sr-rd-content b *,sr-rd-content strong,sr-rd-content strong * sr-rd-content b{-webkit-animation:none 0s ease 0s 1 normal none running;animation:none 0s ease 0s 1 normal none running;-webkit-backface-visibility:visible;backface-visibility:visible;background:transparent none repeat 0 0/auto auto padding-box border-box scroll;border:medium none currentColor;border-collapse:separate;-o-border-image:none;border-image:none;border-radius:0;border-spacing:0;bottom:auto;box-shadow:none;box-sizing:content-box;caption-side:top;clear:none;clip:auto;color:#000;-webkit-columns:auto;-moz-columns:auto;columns:auto;-webkit-column-count:auto;-moz-column-count:auto;column-count:auto;-webkit-column-fill:balance;-moz-column-fill:balance;column-fill:balance;-webkit-column-gap:normal;-moz-column-gap:normal;column-gap:normal;-webkit-column-rule:medium none currentColor;-moz-column-rule:medium none currentColor;column-rule:medium none currentColor;-webkit-column-span:1;-moz-column-span:1;column-span:1;-webkit-column-width:auto;-moz-column-width:auto;column-width:auto;content:normal;counter-increment:none;counter-reset:none;cursor:auto;direction:ltr;display:inline;empty-cells:show;float:none;font-family:serif;font-size:medium;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;line-height:normal;height:auto;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;left:auto;letter-spacing:normal;list-style:disc outside none;margin:0;max-height:none;max-width:none;min-height:0;min-width:0;opacity:1;orphans:2;outline:medium none invert;overflow:visible;overflow-x:visible;overflow-y:visible;padding:0;page-break-after:auto;page-break-before:auto;page-break-inside:auto;-webkit-perspective:none;perspective:none;-webkit-perspective-origin:50% 50%;perspective-origin:50% 50%;position:static;right:auto;-moz-tab-size:8;-o-tab-size:8;tab-size:8;table-layout:auto;text-align:left;text-align-last:auto;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;top:auto;-webkit-transform:none;transform:none;-webkit-transform-origin:50% 50% 0;transform-origin:50% 50% 0;-webkit-transform-style:flat;transform-style:flat;-webkit-transition:none 0s ease 0s;transition:none 0s ease 0s;unicode-bidi:normal;vertical-align:baseline;visibility:visible;white-space:normal;widows:2;width:auto;word-spacing:normal;z-index:auto;all:initial}sr-rd-content a,sr-rd-content a:link{color:#4183c4;text-decoration:none}sr-rd-content a:active,sr-rd-content a:focus,sr-rd-content a:hover{color:#4183c4;text-decoration:underline}sr-rd-content pre{background-color:#f7f7f7;border-radius:3px}sr-rd-content li code,sr-rd-content p code{background-color:rgba(0,0,0,.04);border-radius:3px}.simpread-multi-root{background:#f8f9fa}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css">@media (pointer:coarse){sr-read{margin:20px 5%!important;min-width:0!important;max-width:90%!important}sr-rd-title{margin-top:0;font-size:2.7rem}sr-rd-content sr-blockquote,sr-rd-desc{margin:10 0!important;padding:0 0 0 10px!important;width:90%;font-size:1.8rem;font-style:normal;line-height:1.7;text-align:justify}sr-rd-content{font-size:1.75rem;font-weight:300}sr-rd-content figure{margin:0;padding:0;text-align:center}sr-rd-content a,sr-rd-content a:link,sr-rd-content li code,sr-rd-content p code{font-size:inherit}sr-rd-footer{margin-top:20px}sr-blockquote,sr-blockquote *{margin:5px!important;padding:5px!important}sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6,sr-rd-title{font-family:PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;color:#000;font-weight:100;line-height:1.35}sr-rd-content-h1,sr-rd-content-h2,sr-rd-content-h3,sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h1,sr-rd-content h2,sr-rd-content h3,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{margin-top:1.2em;margin-bottom:.6em;line-height:1.35}sr-rd-content-h1,sr-rd-content h1{font-size:1.8em}sr-rd-content-h2,sr-rd-content h2{font-size:1.6em}sr-rd-content-h3,sr-rd-content h3{font-size:1.4em}sr-rd-content-h4,sr-rd-content-h5,sr-rd-content-h6,sr-rd-content h4,sr-rd-content h5,sr-rd-content h6{font-size:1.2em}sr-rd-content-ul,sr-rd-content ul{margin-left:1.3em!important;list-style:disc}sr-rd-content-ol,sr-rd-content ol{list-style:decimal;margin-left:1.9em!important}sr-rd-content-ol ol,sr-rd-content-ol ul,sr-rd-content-ul ol,sr-rd-content-ul ul,sr-rd-content li ol,sr-rd-content li ul{margin-bottom:.8em;margin-left:2em!important}sr-rd-content img{margin:0;padding:0;border:0;max-width:100%!important;height:auto;box-shadow:0 20px 20px -10px rgba(0,0,0,.1)}sr-rd-mult{min-width:0;background-color:#fff;box-shadow:0 1px 6px rgba(32,33,36,.28);border-radius:8px}sr-rd-mult sr-rd-mult-avatar div{margin:0}sr-rd-mult sr-rd-mult-avatar .sr-rd-content-center-small{margin:7px 0!important}sr-rd-mult sr-rd-mult-avatar span{display:block}sr-rd-mult sr-rd-mult-content{padding-left:0}@media only screen and (max-device-width:1024px){.simpread-theme-root,html.simpread-theme-root{font-size:80%!important}sr-rd-mult sr-rd-mult-avatar img{width:50px;height:50px;min-width:50px;min-height:50px}toc-bg toc{width:10px!important}toc-bg:hover toc{width:auto!important}}@media only screen and (max-device-width:414px){.simpread-theme-root,html.simpread-theme-root{font-size:70%!important}sr-rd-mult sr-rd-mult-avatar img{width:30px;height:30px;min-width:30px;min-height:30px}}@media only screen and (max-device-width:320px){.simpread-theme-root,html.simpread-theme-root{font-size:90%!important}sr-rd-content p{margin-bottom:.5em}}}</style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {}sr-rd-content pre code, sr-rd-content pre code * {}sr-rd-desc {}sr-rd-content pre {}sr-rd-title {}</style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css"></style>
+                        <style type="text/css">sr-rd-content *, sr-rd-content p, sr-rd-content div {
+        font-size: 15px;
+    }
+
+    .annote-perview, .annote-perview * {
+        color: rgb(85, 85, 85);
+        font-weight: 400;
+        line-height: 1.8;
+    }</style>
+                        
+                        
+                        <script>setTimeout(()=>{const e=location.hash.replace("#id=","");let t,a=!1;const n=t=>{for(let n of t){let t;if((t=e.length>6?n.getAttribute("data-id"):n.getAttribute("data-idx"))==e){n.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"}),a=!0;break}}};e&&(0==(t=document.getElementsByClassName("sr-unread-card")).length&&(t=document.getElementsByTagName("sr-annote")),n(t),a||n(t=document.getElementsByClassName("sr-annote")))},500);</script>
+                        
+                        <title>简悦 | Hibernate Validator 8.0.0.Final - Jakarta Bean 验证参考实现：参考指南</title>
+                    </head>
+                    <body>
+                        <sr-read style='undefined'>
+                            <sr-rd-title>Hibernate Validator 8.0.0.Final - Jakarta Bean 验证参考实现：参考指南</sr-rd-title>
+                    <sr-rd-desc style="margin: 0;padding-top: 0;padding-bottom: 0;font-style: normal;font-size: 18px;">Hibernate Validator，域模型的基于注释的约束 - 参考文档</sr-rd-desc>
+                    <sr-rd-content><p></p><p><span><span> 在本章中，除了 Jakarta Bean Validation 规范定义的功能之外，您还将学习如何使用 Hibernate Validator 提供的几个功能。</span><span>这包括快速失败模式、用于编程约束配置的 API 和约束的布尔组合。</span></span></p><p></p><p><span></span><code>org.hibernate.validator.Incubating</code><span><span>只要新的 API 或 SPI 处于开发阶段，它们</span><span>就会带有注解。</span><span>这意味着此类元素（例如包、类型、方法、常量等）可能会在后续版本中以不兼容的方式更改或删除。</span><span>鼓励使用孵化 API/SPI 成员（这样开发团队可以获得对这些新功能的反馈），但是在升级到新版本的 Hibernate Validator 时，您应该准备好根据需要更新使用它们的代码。</span></span></p><p></p><div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>使用以下部分中描述的功能可能会导致应用程序代码无法在 Jakarta Bean 验证提供程序之间移植。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div><p></p><div>
+<h3 id="sr-toc-0"><a href="#_public_api"></a><span><span>12.1. </span><span>公共接口</span></span></h3>
+<p><span><span>不过，让我们先看看 Hibernate Validator 的公共 API。</span><span>您可以在下面找到属于此 API 的所有包及其用途的列表。</span><span>请注意，当包是公共 API 的一部分时，对于它的子包则不一定如此。</span></span></p>
+<div>
+<dl>
+<dt><code>org.hibernate.validator</code></dt>
+<dd>
+<p><span><span>Jakarta Bean 验证引导机制使用的类（例如验证提供程序、配置类）；</span><span>有关详细信息，请参阅</span></span><a href="#chapter-bootstrapping"><span><span>第 9 章，</span></span><em><span><span>自举</span></span></em></a><span><span>。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.cfg</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.cfg.context</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.cfg.defs</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.spi.cfg</code></dt>
+<dd>
+<p><span><span>Hibernate Validator 用于约束声明的流畅 API；</span><span>您将在其中</span></span><code>org.hibernate.validator.cfg</code><span><span>找到</span></span><code>ConstraintMapping</code><span><span>接口、</span></span><code>org.hibernate.validator.cfg.defs</code><span><span>所有约束定义和</span></span><code>org.hibernate.validator.spi.cfg</code><span><span>使用 API 配置默认验证器工厂的回调。</span><span>有关详细信息，</span><span>请参阅</span></span><a href="#section-programmatic-api"><span><span>第 12.4 节，“编程约束定义和声明” 。</span></span></a><span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.constraints</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.constraints.br</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.constraints.pl</code></dt>
+<dd>
+<p><span><span>除了 Jakarta Bean Validation 规范定义的内置约束之外，Hibernate Validator 还提供了一些有用的自定义约束；</span></span><a href="#validator-defineconstraints-hv-constraints"><span><span>这些约束在第 2.3.2 节 “附加约束”</span></span></a><span><span> 中有详细描述</span><span>。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.constraintvalidation</code></dt>
+<dd>
+<p><span><span>扩展约束验证器上下文，允许为消息插值设置自定义属性。</span></span><a href="#section-hibernateconstraintvalidatorcontext"><span><span>第 12.13.1 节，“ </span></span><code>HibernateConstraintValidatorContext</code><span><span>”</span></span></a><span><span> 描述了如何使用该功能。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.group</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">,</font></font><code>org.hibernate.validator.spi.group</code></dt>
+<dd>
+<p><span><span>组序列提供程序功能，允许您根据已验证的对象状态定义动态默认组序列；</span><span>具体可以在</span></span><a href="#section-default-group-class"><span><span>第 5.4 节 “重新定义默认组序列”</span></span></a><span><span> 中找到。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.messageinterpolation</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.resourceloading</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, </font></font><code>org.hibernate.validator.spi.resourceloading</code></dt>
+<dd>
+<p><span><span>约束消息插值相关的类；</span><span>第一个包包含 Hibernate Validator 的默认消息插值器，</span></span><code>ResourceBundleMessageInterpolator</code><span><span>. </span><span>后两个包提供</span></span><code>ResourceBundleLocator</code><span><span>用于加载资源包的 SPI（请参阅</span></span><a href="#section-resource-bundle-locator"><span><span>第 4.2.1 节 “ </span></span><code>ResourceBundleLocator</code><span><span>”</span></span></a><span><span>）及其默认实现。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.parameternameprovider</code></dt>
+<dd>
+<p><span><span>一个</span></span><code>ParameterNameProvider</code><span><span>基于 Paramer 库的库，请参阅</span></span><a href="#section-paranamer-parameternameprovider"><span><span>第 12.14 节，“基于 Paramer </span></span><code>ParameterNameProvider</code><span><span>”</span></span></a><span><span>。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.propertypath</code></dt>
+<dd>
+<p><span><span>API 的扩展</span></span><code>jakarta.validation.Path</code><span><span>，请参阅</span></span><a href="#section-extensions-path-api"><span><span>第 12.7 节，“Path API 的扩展”</span></span></a><span><span>。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.spi.constraintdefinition</code></dt>
+<dd>
+<p><span><span>用于以编程方式注册其他约束验证器的 SPI，请参阅</span></span><a href="#section-constraint-definition-contribution"><span><span>第 12.15 节，“提供约束定义”</span></span></a><span><span>。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.spi.messageinterpolation</code></dt>
+<dd>
+<p><span><span>一个 SPI，可用于在插入约束违规消息时调整语言环境的分辨率。</span><span>请参阅</span></span><a href="#section-locale-resolver"><span><span>第 12.12 节，“自定义语言环境分辨率”</span></span></a><span><span>。</span></span></p>
+</dd>
+<dt><code>org.hibernate.validator.spi.nodenameprovider</code></dt>
+<dd>
+<p><span><span>一个 SPI，可用于在构造属性路径时更改属性名称的解析方式。</span><span>请参阅</span></span><a href="#section-property-node-name-provider"><span><span>第 12.18 节，“自定义约束违规的属性名称解析”</span></span></a><span><span>。</span></span></p>
+</dd>
+</dl>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>Hibernate Validator 的公共包分为两类：虽然实际的 API 部分旨在被客户端</span></span><em><span><span>调用</span></span></em><span><span>或</span></span><em><span><span>使用</span></span></em><span><span>（例如用于编程约束声明或自定义约束的 API），但 SPI（服务提供者接口）包包含的接口旨在</span><span>由客户（例如）</span></span><em><span><span>实施</span></span></em><span></span><code>ResourceBundleLocator</code><span><span>。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<p><span><span>该表中未列出的任何包都是 Hibernate Validator 的内部包，不打算由客户端访问。</span><span>这些内部包的内容可能会随着版本的不同而发生变化，恕不另行通知，因此可能会破坏依赖它的任何客户端代码。</span></span></p>
+</div><p></p><div>
+<h3 id="sr-toc-1"><a href="#section-fail-fast"></a><span><span>12.2. </span><span>快速失败模式</span></span></h3>
+<p><span><span>使用快速失败模式，Hibernate Validator 允许在第一次违反约束时立即从当前验证中返回。</span><span>这对于验证大型对象图很有用，您只对快速检查是否存在任何约束违规感兴趣。</span></span></p>
+
+<div>
+<p><span><span>例 12.1：使用快速失败验证模式</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包 org.hibernate.validator.referenceguide.chapter12.failfast；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共汽车类 {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @NotNull</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私人字符串制造商；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @AssertTrue</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私人布尔值已注册；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共汽车（字符串制造商，布尔值已注册）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        this.manufacturer = 制造商；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        this.isRegistered = isRegistered;</font></font><font></font>
+    }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    //吸气剂和吸气剂...</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证器 validator = Validation.byProvider( HibernateValidator.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        。配置（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .failFast( 真 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .buildValidatorFactory()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .getValidator();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Car car = new Car( null, false );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+设置&lt;ConstraintViolation&lt;Car&gt;&gt; constraintViolations = validator.validate( car );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( 1, constraintViolations.size() );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>这里经过验证的对象实际上无法满足在类上声明的两个约束</span></span><code>Car</code><span><span>，但验证调用只产生一个，</span></span><code>ConstraintViolation</code><span><span>因为启用了快速失败模式。</span></span></p>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>无法保证约束的评估顺序，即返回的违规是源于约束还是源于</span></span><code>@NotNull</code><span><span>约束是不确定的</span></span><code>@AssertTrue</code><span><span>。</span><span>如果需要，可以使用组序列强制执行确定性评估顺序，如
+</span></span><a href="#section-defining-group-sequences"><span><span>第 5.3 节 “定义组序列”</span></span></a><span><span> 中所述。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+</div><p></p><div>
+<h3 id="sr-toc-2"><a href="#section-method-validation-prerequisite-relaxation"></a><span><span>12.3. </span><span>放宽类层次结构中方法验证的要求</span></span></h3>
+<p><span><span>Jakarta Bean Validation 规范定义了一组先决条件，这些先决条件在定义类层次结构中的方法约束时适用。</span><span>
+这些先决条件在 Jakarta Bean Validation 规范的</span></span><a href="https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html#constraintdeclarationvalidationprocess-methodlevelconstraints-inheritance"><span><span>第 5.6.5 节</span></span></a><span><span>中定义
+。</span><span>另请参阅</span><span>
+本指南中的</span></span><a href="#section-method-constraints-inheritance-hierarchies"><span><span>第 3.1.4 节 “继承层次结构中的方法约束” 。</span></span></a><span></span></p>
+<p><span><span>根据规范，Jakarta Bean Validation 提供者可以放宽这些先决条件。</span><span>使用 Hibernate Validator，您可以通过以下两种方式之一完成此操作。</span></span></p>
+<p><span><span>首先，您可以在</span><em><span> validation.xml</span></em><span> 中使用配置属性</span></span><em><span><span> hibernate.validator.allow_parameter_constraint_override</span></span></em><span><span>、
+ </span></span><em><span><span>hibernate.validator.allow_multiple_cascaded_validation_on_result</span></span></em><span><span> 和
+</span></span><em><span><span>hibernate.validator.allow_parallel_method_parameter_constraint</span></span></em><span><span>。</span><span>请参阅示例
+</span><a href="#example-relaxing-method-validation-xml"><span>Example 12.2，“通过属性在类层次结构中配置方法验证行为”</span></a><span>。</span></span><em><span></span></em><span></span><a href="#example-relaxing-method-validation-xml"><span></span></a><span></span></p>
+<div>
+<p><span><span>示例 12.2：通过属性在类层次结构中配置方法验证行为</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+&lt;验证配置</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        xmlns="https://jakarta.ee/xml/ns/validation/configuration"</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/validation/configuration https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd"</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        版本=“3.0”&gt;</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    &lt;default-provider&gt;org.hibernate.validator.HibernateValidator&lt;/default-provider&gt;</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    &lt;property name="hibernate.validator.allow_parameter_constraint_override"&gt;真&lt;/property&gt;</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    &lt;property name="hibernate.validator.allow_multiple_cascaded_validation_on_result"&gt;真&lt;/property&gt;</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    &lt;property name="hibernate.validator.allow_parallel_method_parameter_constraint"&gt;真&lt;/property&gt;</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+&lt;/验证配置&gt;</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>或者，可以在编程引导期间应用这些设置。</span></span></p>
+<div>
+<p><span><span>示例 12.3：在类层次结构中配置方法验证行为</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HibernateValidatorConfiguration configuration = Validation.byProvider( HibernateValidator.class ).configure();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+configuration.allowMultipleCascadedValidationOnReturnValues（真）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .allowOverridingMethodAlterParameterConstraint( 真 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .allowParallelMethodsDefineParameterConstraints( true );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>默认情况下，所有这些属性都是 false，实现 Jakarta Bean Validation 规范中定义的默认行为。</span></span></p>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="警告"></i>
+</td>
+<td>
+<p><span><span>更改方法验证的默认行为将导致不符合规范且不可移植的应用程序。</span><span>确保了解您在做什么，并且您的用例确实需要更改默认行为。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-3"><a href="#section-programmatic-api"></a><span><span>12.4。</span><span>编程约束定义和声明</span></span></h3>
+<p><span><span>根据 Jakarta Bean Validation 规范，您可以使用 Java 注释和基于 XML 的约束映射来定义和声明约束。</span></span></p>
+<p><span><span>此外，Hibernate Validator 提供了一个流畅的 API，允许以编程方式配置约束。</span><span>用例包括在运行时动态添加约束，具体取决于某些应用程序状态或测试，其中您需要在不同场景中具有不同约束的实体，但不想为每个测试用例实现实际的 Java 类。</span></span></p>
+<p><span><span>默认情况下，通过 Fluent API 添加的约束会添加到通过标准配置功能配置的约束中。</span><span>但也可以在需要时忽略注释和 XML 配置约束。</span></span></p>
+<p><span><span>API 以</span></span><code>ConstraintMapping</code><span><span>接口为中心。</span><span>您将获得一个新的映射
+</span></span><code>HibernateValidatorConfiguration#createConstraintMapping()</code><span><span>，然后您可以通过它以流畅的方式进行配置，如</span></span><a href="#example-constraint-mapping"><span><span>例 12.4 “编程约束声明”</span></span></a><span><span> 中所示。</span></span></p>
+<div>
+<p><span><span>例 12.4：编程约束声明</span></span></p>
+<div>
+<div>
+<div>
+<pre>HibernateValidatorConfiguration configuration = Validation<font></font>
+        .byProvider( HibernateValidator.class )<font></font>
+        .configure();<font></font>
+<font></font>
+ConstraintMapping constraintMapping = configuration.createConstraintMapping();<font></font>
+<font></font>
+constraintMapping<font></font>
+    .type( Car.class )<font></font>
+        .field( "manufacturer" )<font></font>
+            .constraint( new NotNullDef() )<font></font>
+        .field( "licensePlate" )<font></font>
+            .ignoreAnnotations( true )<font></font>
+            .constraint( new NotNullDef() )<font></font>
+            .constraint( new SizeDef().min( 2 ).max( 14 ) )<font></font>
+    .type( RentalCar.class )<font></font>
+        .getter( "rentalStation" )<font></font>
+            .constraint( new NotNullDef() );<font></font>
+<font></font>
+Validator validator = configuration.addMapping( constraintMapping )<font></font>
+        .buildValidatorFactory()<font></font>
+        .getValidator();<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>可以使用方法链在多个类和属性上配置约束。</span><span>约束定义类</span></span><code>NotNullDef</code><span><span>和</span></span><code>SizeDef</code><span><span>辅助类允许以类型安全的方式配置约束参数。</span><span>包中的所有内置约束都存在定义类</span></span><code>org.hibernate.validator.cfg.defs</code><span><span>。</span><span>通过调用</span></span><code>ignoreAnnotations()</code><span><span>给定元素忽略通过注释或 XML 配置的任何约束。</span></span></p>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>每个元素（类型、属性、方法等）只能在用于设置一个验证器工厂的所有约束映射中配置一次。</span><span>否则 a</span></span><code>ValidationException</code><span><span>被提高。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>不支持通过配置子类型为非重写的超类型属性和方法添加约束。</span><span>在这种情况下，您需要配置超类型。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<p><span><span>配置映射后，您必须将其添加回配置对象，然后您可以从中获取验证器工厂。</span></span></p>
+<p><span><span>对于自定义约束，您可以创建自己的扩展定义类，也</span><span>可以像</span><a href="#example-generic-constraint-mapping"><span>示例 12.5 “自定义约束的编程声明”</span></a></span><code>ConstraintDef</code><span><span>中所示使用</span><span>。</span></span><code>GenericConstraintDef</code><span></span><a href="#example-generic-constraint-mapping"><span></span></a><span></span></p>
+<div>
+<p><span><span>示例 12.5：自定义约束的编程声明</span></span></p>
+<div>
+<div>
+<div>
+<pre>ConstraintMapping constraintMapping = configuration.createConstraintMapping();<font></font>
+<font></font>
+constraintMapping<font></font>
+    .type( Car.class )<font></font>
+        .field( "licensePlate" )<font></font>
+            .constraint( new GenericConstraintDef&lt;&gt;( CheckCase.class )<font></font>
+                .param( "value", CaseMode.UPPER )<font></font>
+            );<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>容器元素约束由编程 API 支持，使用</span></span><code>containerElementType()</code><span><span>.</span></span></p>
+
+<div>
+<p><span><span>示例 12.6：嵌套容器元素约束的编程声明</span></span></p>
+<div>
+<div>
+<div>
+<pre>ConstraintMapping constraintMapping = configuration.createConstraintMapping();<font></font>
+<font></font>
+constraintMapping<font></font>
+    .type( Car.class )<font></font>
+        .field( "manufacturer" )<font></font>
+            .constraint( new NotNullDef() )<font></font>
+        .field( "licensePlate" )<font></font>
+            .ignoreAnnotations( true )<font></font>
+            .constraint( new NotNullDef() )<font></font>
+            .constraint( new SizeDef().min( 2 ).max( 14 ) )<font></font>
+        .field( "partManufacturers" )<font></font>
+            .containerElementType( 0 )<font></font>
+                .constraint( new NotNullDef() )<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .containerElementType( 1, 0 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .constraint( new NotNullDef() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    .type(RentalCar.class)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .getter( "出租站" )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .constraint( new NotNullDef() );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>如所示，传递给的参数</span></span><code>containerElementType()</code><span><span>是用于获取所需嵌套容器元素类型的类型参数索引的路径。</span></span></p>
+<p><span><span>通过调用，</span></span><code>valid()</code><span><span>您可以将成员标记为级联验证，这相当于用</span></span><code>@Valid</code><span><span>. </span></span><code>convertGroup()</code><span><span>使用方法（相当于）</span><span>配置要在级联验证期间应用的任何组转换
+</span></span><code>@ConvertGroup</code><span><span>。</span></span><a href="#example-cascading-constraints"><span><span>可以在例 12.7 “为级联验证标记属性”</span></span></a><span><span> 中看到一个例子
+</span><span>。</span></span></p>
+<div>
+<p><span><span>示例 12.7：将属性标记为级联验证</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ConstraintMapping constraintMapping = configuration.createConstraintMapping();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+约束映射</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    .type( 汽车类 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .field(“司机”)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .constraint( new NotNullDef() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            。有效的（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .convertGroup(Default.class).to(PersonDefault.class)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .field( "partManufacturers" )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .containerElementType(0)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                。有效的（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .containerElementType( 1, 0 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                。有效的（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    .type( 人.类 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .field("姓名")</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .constraint( new NotNullDef().groups( PersonDefault.class ) );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>您不仅可以使用流畅的 API 配置 bean 约束，还可以配置方法和构造函数约束。</span><span>如示例 12.8 所示</span></span><a href="#example-method-constraint-mapping"><span><span>，“方法和构造函数约束的编程声明”</span></span></a><span><span> 构造函数由它们的参数类型和方法由它们的名称和参数类型标识。</span><span>选择方法或构造函数后，您可以标记其参数和 / 或返回值以进行级联验证并添加约束以及交叉参数约束。</span></span></p>
+<p><span><span>如示例所示，</span></span><code>valid()</code><span><span>也可以在容器元素类型上调用。</span></span></p>
+<div>
+<p><span><span>示例 12.8：方法和构造函数约束的编程声明</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ConstraintMapping constraintMapping = configuration.createConstraintMapping();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+约束映射</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    .type( 汽车类 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .constructor( 字符串类 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .参数（0）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .constraint( new SizeDef().min( 3 ).max( 50 ) )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .returnValue()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                。有效的（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .method(“驱动器”, int.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .参数（0）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .constraint( new MaxDef().value( 75 ) )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .method("加载", List.class, List.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .crossParameter()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .constraint( 新的 GenericConstraintDef&lt;&gt;(</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                        LuggageCountMatchesPassengerCount.class ).param(</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            "piecesOfLuggagePerPassenger", 2</font></font><font></font>
+                        )<font></font>
+                )<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .method(“getDriver”)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .returnValue()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .constraint( new NotNullDef() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                。有效的（）;</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>最后但同样重要的是，您可以配置默认组序列或某种类型的默认组序列提供程序，如以下示例所示。</span></span></p>
+<div>
+<p><span><span>示例 12.9：默认组序列和默认组序列提供程序的配置</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ConstraintMapping constraintMapping = configuration.createConstraintMapping();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+约束映射</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    .type( 汽车类 )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .defaultGroupSequence( Car.class, CarChecks.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    .type(RentalCar.class)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .defaultGroupSequenceProviderClass(RentalCarGroupSequenceProvider.class);</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-4"><a href="#section-programmatic-api-contributor"></a><span><span>12.5。</span><span>将编程约束声明应用于默认验证器工厂</span></span></h3>
+<p><span><span>如果您不是手动引导验证器工厂，而是使用通过</span></span><em><span><span> META-INF/validation.xml</span></span></em><span><span> 配置的默认工厂
+（请参阅</span></span><a href="#chapter-xml-configuration"><span><span>第 8 章，</span></span><em><span><span>通过 XML 配置</span></span></em></a><span><span>），您可以通过创建一个或多个约束映射来添加一个或多个约束映射贡献者。</span><span>为此，请执行</span></span><code>ConstraintMappingContributor</code><span><span>合同：</span></span></p>
+<div>
+<p><span><span>示例 12.10：自定义</span></span><code>ConstraintMappingContributor</code><span><span>实现</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包 org.hibernate.validator.referenceguide.chapter12.constraintapi；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共类 MyConstraintMappingContributor 实现 ConstraintMappingContributor {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @覆盖</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public void createConstraintMappings(ConstraintMappingBuilder builder) {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        builder.addConstraintMapping()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .type(马拉松.class)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .getter(“姓名”)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .constraint( new NotNullDef() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .field( "numberOfHelpers" )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .constraint( new MinDef().value( 1 ) );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        builder.addConstraintMapping()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .type( 亚军.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .field("付费报名费")</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .constraint( new AssertTrueDef() );</font></font><font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>然后，您需要使用属性 key 在</span></span><em><span><span> META-INF/validation.xml</span></span></em><span><span> 中指定贡献者实现的完全限定类名</span></span><code>hibernate.validator.constraint_mapping_contributors</code><span><span>。</span><span>您可以通过用逗号分隔来指定多个贡献者。</span></span></p>
+</div><p></p><div>
+<h3 id="sr-toc-5"><a href="#section-advanced-constraint-composition"></a><span><span>12.6. </span><span>高级约束组合功能</span></span></h3>
+<div>
+<h4 id="sr-toc-6"><a href="#_validation_target_specification_for_purely_composed_constraints"></a><span><span>12.6.1。</span><span>纯组合约束的验证目标规范</span></span></h4>
+<p><span><span>如果您在方法声明上指定了一个纯组合约束——即一个本身没有验证器但完全由其他组合约束组成的约束——验证引擎无法确定该约束是否要作为返回值约束应用或者作为交叉参数约束。</span></span></p>
+<p><span><span>Hibernate Validator 允许通过</span></span><code>@SupportedValidationTarget</code><span><span>在组合约束类型的声明上指定注释来解决此类歧义，如</span></span><a href="#example-purely-composed-constraint-validation-target"><span><span>例 12.11 “指定纯组合约束的验证目标”</span></span></a><span><span> 所示。</span><span>The</span></span><code>@ValidInvoiceAmount</code><span><span>没有声明任何验证器，但它仅由 the</span></span><code>@Min</code><span><span>和</span></span><code>@NotNull</code><span><span>
+constraints 组成。</span><span>确保</span></span><code>@SupportedValidationTarget</code><span><span>在方法声明中给出约束时将约束应用于方法返回值。</span></span></p>
+<div>
+<p><span><span>示例 12.11：指定纯组合约束的验证目标</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包 org.hibernate.validator.referenceguide.chapter12.purelycomposed；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Min(值= 0)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@NotNull</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Target({ 方法、字段、注释类型、构造函数、参数})</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@保留（运行时）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Documented</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Constraint(validatedBy = {})</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@SupportedValidationTarget(ValidationTarget.ANNOTATED_ELEMENT)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@ReportAsSingleViolation</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共@interface ValidInvoiceAmount {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    String message() default "{org.hibernate.validator.referenceguide.chapter11.purelycomposed."</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            + "ValidInvoiceAmount.message}";</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    类&lt;?&gt;[]组（）默认{}；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    类&lt;? </font><font style="vertical-align: inherit;">扩展有效载荷&gt;[]有效载荷（）默认{}；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @OverridesAttribute(constraint = Min.class, name = "value")</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    长值（）；</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h4 id="sr-toc-7"><a href="#section-boolean-constraint-composition"></a><span><span>12.6.2。</span><span>约束的布尔组合</span></span></h4>
+<p><span><span>Jakarta Bean Validation 指定组合约束的约束（请参阅
+</span></span><a href="#section-constraint-composition"><span><span>第 6.4 节，“约束组合” ）全部通过逻辑</span></span></a><span></span><em><span><span> AND</span></span></em><span><span> 组合</span><span>。</span><span>这意味着所有组合约束都需要返回 true 才能获得整体成功验证。</span></span></p>
+<p><span><span>Hibernate Validator 对此提供了扩展，并允许您通过逻辑
+</span></span><em><span><span>OR</span></span></em><span><span> 或</span></span><em><span><span> NOT</span></span></em><span><span> 组合约束。</span><span>为此，您必须使用 ConstraintComposition 注释和枚举 CompositionType 及其值</span></span><em><span><span> AND</span></span></em><span><span>、</span></span><em><span><span>OR</span></span></em><span><span> 和</span></span><em><span><span> ALL_FALSE</span></span></em><span><span>。</span></span></p>
+<p><a href="#example-boolean-constraint-composition"><span><span>示例 12.12，“约束的 OR 组合”</span></span></a><span><span> 展示了如何构建一个组合约束</span></span><code>@PatternOrSize</code><span><span>
+，其中只有一个组合约束需要有效才能通过验证。</span><span>经过验证的字符串要么全部小写，要么长度介于两到三个字符之间。</span></span></p>
+<div>
+<p><span><span>示例 12.12：约束的 OR 组合</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包 org.hibernate.validator.referenceguide.chapter12.booleancomposition；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@ConstraintComposition(或)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Pattern(regexp = "[az]")</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Size(最小值 = 2, 最大值 = 3)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@ReportAsSingleViolation</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Target({ 方法，字段 })</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@保留（运行时）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+@Constraint(validatedBy = { })</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共@interface PatternOrSize {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    String message() 默认“{org.hibernate.validator.referenceguide.chapter11.” </font><font style="vertical-align: inherit;">+</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            "booleancomposition.PatternOrSize.message}";</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    类&lt;?&gt;[]组（）默认{}；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    类&lt;? </font><font style="vertical-align: inherit;">扩展有效载荷&gt;[]有效载荷（）默认{}；</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="提示"></i>
+</td>
+<td>
+<p><span><span>使用</span></span><em><span><span> ALL_FALSE</span></span></em><span><span> 作为组合类型隐式强制在约束组合验证失败的情况下仅报告一次违规。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-8"><a href="#section-extensions-path-api"></a><span><span>12.7。</span><span>路径 API 的扩展</span></span></h3>
+<p><span><span>Hibernate Validator 提供了对 API 的扩展</span></span><code>jakarta.validation.Path</code><span><span>。</span></span><code>ElementKind.PROPERTY</code><span><span>对于和</span><span>的节点</span></span><code>ElementKind.CONTAINER_ELEMENT</code><span><span>，它允许获取表示的属性的值。</span><span>为此，请将给定节点缩小到类型</span></span><code>org.hibernate.validator.path.PropertyNode</code><span><span>或
+</span></span><code>org.hibernate.validator.path.ContainerElementNode</code><span><span>分别使用</span></span><code>Node#as()</code><span><span>，如以下示例所示：</span></span></p>
+<div>
+<p><span><span>示例 12.13：从属性节点获取值</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">建筑建筑=新建筑（）；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+// 假设人名违反了@Size 约束</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+人 bob = new Person( "Bob" );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公寓 bobsApartment = 新公寓( bob );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+building.getApartments().add(bobsApartment);</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+设置&lt;ConstraintViolation&lt;Building&gt;&gt; constraintViolations = validator.validate(building);</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Path path = constraintViolations.iterator().next().getPropertyPath();</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Iterator&lt;Path.Node&gt; nodeIterator = path.iterator();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Path.Node node = nodeIterator.next();</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( node.getName(), "公寓" );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertSame( node.as( PropertyNode.class ).getValue(), bobsApartment );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+node = nodeIterator.next();</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( node.getName(), "resident" );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertSame( node.as( PropertyNode.class ).getValue(), bob );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+node = nodeIterator.next();</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( node.getName(), "name" );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( node.as( PropertyNode.class ).getValue(), "Bob" );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span></span><code>Set</code><span><span>这对于获取属性路径上的属性</span><span>元素（例如</span></span><code>apartments</code><span><span>
+在示例中）也非常有用，否则无法识别（与</span></span><code>Map</code><span><span>and 不同</span></span><code>List</code><span><span>，在这种情况下没有键或索引）。</span></span></p>
+</div><p></p><div>
+<h3 id="sr-toc-9"><a href="#section-dynamic-payload"></a><span><span>12.8。</span><span>动态负载作为一部分</span></span><code>ConstraintViolation</code></h3>
+<p><span><span>在某些情况下，如果约束违反提供了额外的数据——所谓的动态有效载荷，则可以帮助自动处理违反。</span><span>例如，此动态负载可能包含提示用户如何解决违规问题。</span></span></p>
+
+<div>
+<p><span><span>示例 12.14：</span></span><code>ConstraintValidator</code><span><span>设置动态负载的实现</span></span></p>
+<div>
+<div>
+<div>
+<pre>package org.hibernate.validator.referenceguide.chapter12.dynamicpayload;<font></font>
+<font></font>
+import static org.hibernate.validator.internal.util.CollectionHelper.newHashMap;<font></font>
+<font></font>
+public class ValidPassengerCountValidator implements ConstraintValidator&lt;ValidPassengerCount, Car&gt; {<font></font>
+<font></font>
+    private static final Map&lt;Integer, String&gt; suggestedCars = newHashMap();<font></font>
+<font></font>
+    static {<font></font>
+        suggestedCars.put( 2, "Chevrolet Corvette" );<font></font>
+        suggestedCars.put( 3, "Toyota Volta" );<font></font>
+        suggestedCars.put( 4, "Maserati GranCabrio" );<font></font>
+        suggestedCars.put( 5, " Mercedes-Benz E-Class" );<font></font>
+    }<font></font>
+<font></font>
+    @Override<font></font>
+    public void initialize(ValidPassengerCount constraintAnnotation) {<font></font>
+    }<font></font>
+<font></font>
+    @Override<font></font>
+    public boolean isValid(Car car, ConstraintValidatorContext context) {<font></font>
+        if ( car == null ) {<font></font>
+            return true;<font></font>
+        }<font></font>
+<font></font>
+        int passengerCount = car.getPassengers().size();<font></font>
+        if ( car.getSeatCount() &gt;= passengerCount ) {<font></font>
+            return true;<font></font>
+        }<font></font>
+        else {<font></font>
+<font></font>
+            if ( suggestedCars.containsKey( passengerCount ) ) {<font></font>
+                HibernateConstraintValidatorContext hibernateContext = context.unwrap(<font></font>
+                        HibernateConstraintValidatorContext.class<font></font>
+                );<font></font>
+                hibernateContext.withDynamicPayload( suggestedCars.get( passengerCount ) );<font></font>
+            }<font></font>
+            return false;<font></font>
+        }<font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>在约束违反处理方面，</span></span><code>jakarta.validation.ConstraintViolation</code><span><span>然后可以依次解包 a</span></span><code>HibernateConstraintViolation</code><span><span>以检索动态有效负载以进行进一步处理。</span></span></p>
+<div>
+<p><span><span>示例 12.15：检索 a</span></span><code>ConstraintViolation</code><span><span>的动态负载</span></span></p>
+<div>
+<div>
+<div>
+<pre>Car car = new Car( 2 );<font></font>
+car.addPassenger( new Person() );<font></font>
+car.addPassenger( new Person() );<font></font>
+car.addPassenger( new Person() );<font></font>
+Set&lt;ConstraintViolation&lt;Car&gt;&gt; constraintViolations = validator.validate( car );<font></font>
+<font></font>
+assertEquals( 1, constraintViolations.size() );<font></font>
+<font></font>
+ConstraintViolation&lt;Car&gt; constraintViolation = constraintViolations.iterator().next();<font></font>
+@SuppressWarnings("unchecked")<font></font>
+HibernateConstraintViolation&lt;Car&gt; hibernateConstraintViolation = constraintViolation.unwrap(<font></font>
+        HibernateConstraintViolation.class<font></font>
+);<font></font>
+String suggestedCar = hibernateConstraintViolation.getDynamicPayload( String.class );<font></font>
+assertEquals( "Toyota Volta", suggestedCar );<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-10"><a href="#el-features"></a><span><span>12.9。</span><span>启用表达式语言功能</span></span></h3>
+<p><span><span>Hibernate Validator 限制默认公开的表达式语言功能。</span></span></p>
+<p><span><span>为此，我们在 中定义了几个特征级别</span></span><code>ExpressionLanguageFeatureLevel</code><span><span>：</span></span></p>
+<div>
+<ul>
+<li>
+<p><code>NONE</code><span><span>：完全禁用表达式语言插值。</span></span></p>
+</li>
+<li>
+<p><code>VARIABLES</code><span><span>：允许插值通过注入的变量</span></span><code>addExpressionVariable()</code><span><span>，资源包和对象的使用</span></span><code>formatter</code><span><span>。</span></span></p>
+</li>
+<li>
+<p><code>BEAN_PROPERTIES</code><span><span>：允许一切</span></span><code>VARIABLES</code><span><span>允许加上 bean 属性的插值。</span></span></p>
+</li>
+<li>
+<p><code>BEAN_METHODS</code><span><span>: 还允许执行 bean 方法。</span><span>如果处理不当，这可能会导致严重的安全问题，包括任意代码执行。</span></span></p>
+</li>
+</ul>
+</div>
+<p><span><span>根据上下文，我们公开的功能是不同的：</span></span></p>
+<div>
+<ul>
+<li>
+<p><span><span>对于约束，默认级别为</span></span><code>BEAN_PROPERTIES</code><span><span>. </span><span>要正确插入所有内置约束消息，您至少需要级别</span></span><code>VARIABLES</code><span><span>。</span></span></p>
+</li>
+<li>
+<p><span><span>对于通过 创建的自定义违规，</span></span><code>ConstraintValidatorContext</code><span><span>表达式语言默认处于禁用状态。</span><span>您可以为特定的自定义违规启用它，启用后，它将默认为</span></span><code>VARIABLES</code><span><span>.</span></span></p>
+</li>
+</ul>
+</div>
+<p><span><span>Hibernate Validator 提供了在引导</span></span><code>ValidatorFactory</code><span><span>.</span></span></p>
+<p><span><span>要更改约束的表达式语言功能级别，请使用以下命令：</span></span></p>
+<div>
+<div>
+<pre>ValidatorFactory validatorFactory = Validation.byProvider( HibernateValidator.class )<font></font>
+        .configure()<font></font>
+        .constraintExpressionLanguageFeatureLevel( ExpressionLanguageFeatureLevel.VARIABLES )<font></font>
+        .buildValidatorFactory();<font></font>
+</pre>
+</div>
+</div>
+<p><span><span>要更改自定义违规的表达式语言功能级别，请使用以下命令：</span></span></p>
+<div>
+<div>
+<pre>ValidatorFactory validatorFactory = Validation.byProvider( HibernateValidator.class )<font></font>
+        .configure()<font></font>
+        .customViolationExpressionLanguageFeatureLevel( ExpressionLanguageFeatureLevel.VARIABLES )<font></font>
+        .buildValidatorFactory();<font></font>
+</pre>
+</div>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="警告"></i>
+</td>
+<td>
+<p><span><span>这样做会自动为应用程序中的所有自定义违规启用表达式语言。</span></span></p>
+<p><span><span>它应该只用于兼容性和简化从旧的 Hibernate Validator 版本的迁移。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<p><span><span>这些级别也可以使用以下属性定义：</span></span></p>
+<div>
+<ul>
+<li>
+<p><code>hibernate.validator.constraint_expression_language_feature_level</code></p>
+</li>
+<li>
+<p><code>hibernate.validator.custom_violation_expression_language_feature_level</code></p>
+</li>
+</ul>
+</div>
+<p><span><span>这些属性的可接受</span><span>值为：</span></span><code>none</code><span><span>、</span></span><code>variables</code><span><span>和</span><span>。</span></span><code>bean-properties</code><span></span><code>bean-methods</code><span></span></p>
+</div><p></p><div>
+<h3 id="sr-toc-11"><a href="#non-el-message-interpolator"></a>12.10. <code>ParameterMessageInterpolator</code></h3>
+<p><span><span>Hibernate Validator 默认要求统一 EL 的实现（请参阅
+</span></span><a href="#validator-gettingstarted-uel"><span><span>第 1.1.1 节，“统一 EL”</span></span></a><span><span>）可用。</span><span>这是允许使用 Jakarta Bean 验证规范定义的 EL 表达式插入约束错误消息所必需的。</span></span></p>
+<p><span><span>对于您不能或不想提供 EL 实现的环境，Hibernate Validator 提供了一个非基于 EL 的消息插值器 - </span></span><code>org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator</code><span><span>。</span></span></p>
+
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="警告"></i>
+</td>
+<td>
+<p><span><span>包含 EL 表达式的约束消息将由 未插值返回
+</span></span><code>org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator</code><span><span>。</span><span>这也会影响使用 EL 表达式的内置默认约束消息。</span><span>目前，</span></span><code>DecimalMin</code><span><span>并</span></span><code>DecimalMax</code><span><span>受到影响。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-12"><a href="#_resourcebundlelocator"></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12.11.</font></font><code>ResourceBundleLocator</code></h3>
+<p><span><span>通过</span></span><code>ResourceBundleLocator</code><span><span>，Hibernate Validator 提供了一个额外的 SPI，它允许从</span></span><em><span><span> ValidationMessages</span></span></em><span><span> 之外的其他资源包中检索错误消息，同时仍然使用规范定义的实际插值算法。</span><span>请参阅
+</span></span><a href="#section-resource-bundle-locator"><span><span>第 4.2.1 节 “ </span></span><code>ResourceBundleLocator</code><span><span>”</span></span></a><span><span> 以了解如何使用该 SPI。</span></span></p>
+</div><p></p><div>
+<h3 id="sr-toc-13"><a href="#section-locale-resolver"></a><span><span>12.12。</span><span>自定义语言环境分辨率</span></span></h3>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="警告"></i>
+</td>
+<td>
+<p><span><span>这些合同被标记为</span></span><code>@Incubating</code><span><span>将来可能会发生变化。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<p><span><span>Hibernate Validator 提供了几个扩展点来构建自定义区域设置解析策略。</span><span>在插入约束违规消息时使用已解析的语言环境。</span></span></p>
+<p><span><span>Hibernate Validator 的默认行为是始终使用系统默认语言环境（通过 获得</span></span><code>Locale.getDefault()</code><span><span>）。</span><span>这可能不是期望的行为，例如，如果您通常将系统区域设置为</span></span><code>en-US</code><span><span>但希望您的应用程序以法语提供消息。</span></span></p>
+<p><span><span>以下示例显示如何将 Hibernate Validator 默认语言环境设置为</span></span><code>fr-FR</code><span><span>：</span></span></p>
+<div>
+<p><span><span>例 12.16：配置默认语言环境</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证器 validator = Validation.byProvider( HibernateValidator.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        。配置（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .defaultLocale( Locale.FRANCE )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .buildValidatorFactory()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .getValidator();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Set&lt;ConstraintViolation&lt;Bean&gt;&gt; violations = validator.validate( new Bean() );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( "必须为真", violations.iterator().next().getMessage() );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>虽然这已经是一个不错的改进，但在完全国际化的应用程序中，这还不够：您需要 Hibernate Validator 根据用户上下文选择语言环境。</span></span></p>
+<p><span><span>Hibernate Validator 提供了</span></span><code>org.hibernate.validator.spi.messageinterpolation.LocaleResolver</code><span><span>允许微调语言环境分辨率的 SPI。</span><span>通常，在 JAX-RS 环境中，您可以从</span></span><code>Accept-Language</code><span><span>HTTP 标头解析要使用的语言环境。</span></span></p>
+<p><span><span>在下面的示例中，我们使用硬编码值，但是，例如，在 RESTEasy 应用程序的情况下，您可以从</span></span><code>ResteasyContext</code><span><span>.</span></span></p>
+<div>
+<p><span><span>示例 12.17：微调用于通过</span></span><code>LocaleResolver</code></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LocaleResolver localeResolver = new LocaleResolver() {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @覆盖</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共区域设置解析（LocaleResolverContext 上下文）{</font></font><font></font>
+        // get the locales supported by the client from the Accept-Language header<font></font>
+        String acceptLanguageHeader = "it-IT;q=0.9,en-US;q=0.7";<font></font>
+<font></font>
+        List&lt;LanguageRange&gt; acceptedLanguages = LanguageRange.parse( acceptLanguageHeader );<font></font>
+        List&lt;Locale&gt; resolvedLocales = Locale.filter( acceptedLanguages, context.getSupportedLocales() );<font></font>
+<font></font>
+        if ( resolvedLocales.size() &gt; 0 ) {<font></font>
+            return resolvedLocales.get( 0 );<font></font>
+        }<font></font>
+<font></font>
+        return context.getDefaultLocale();<font></font>
+    }<font></font>
+};<font></font>
+<font></font>
+Validator validator = Validation.byProvider( HibernateValidator.class )<font></font>
+        .configure()<font></font>
+        .defaultLocale( Locale.FRANCE )<font></font>
+        .locales( Locale.FRANCE, Locale.ITALY, Locale.US )<font></font>
+        .localeResolver( localeResolver )<font></font>
+        .buildValidatorFactory()<font></font>
+        .getValidator();<font></font>
+<font></font>
+Set&lt;ConstraintViolation&lt;Bean&gt;&gt; violations = validator.validate( new Bean() );<font></font>
+assertEquals( "deve essere true", violations.iterator().next().getMessage() );<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>使用 时</span></span><code>LocaleResolver</code><span><span>，您必须通过 方法定义支持的语言环境列表</span></span><code>locales()</code><span><span>。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-14"><a href="#_custom_contexts"></a><span><span>12.13。</span><span>自定义上下文</span></span></h3>
+<p><span><span>Jakarta Bean Validation 规范在其 API 中的多个点提供了将给定接口解包为实现者特定子类型的可能性。</span></span><code>ConstraintValidator</code><span><span>在实现中创建约束违规以及实例中的消息插值</span><span>的情况下
+，</span><span>分别</span></span><code>MessageInterpolator</code><span><span>
+存在</span></span><code>unwrap()</code><span><span>用于提供的上下文实例的方法
+</span><span>。</span><span>Hibernate Validator 为这两个接口提供自定义扩展。</span></span><code>ConstraintValidatorContext</code><span></span><code>MessageInterpolatorContext</code><span></span></p>
+<div>
+<h4 id="sr-toc-15"><a href="#section-hibernateconstraintvalidatorcontext"></a>12.13.1. <code>HibernateConstraintValidatorContext</code></h4>
+<p><code>HibernateConstraintValidatorContext</code><span><span>是它的一个子类型</span></span><code>ConstraintValidatorContext</code><span><span>，它允许您：</span></span></p>
+<div>
+<ul>
+<li>
+<p><span><span>为特定的自定义违规启用表达式语言插值 - 见下文</span></span></p>
+</li>
+<li>
+<p><span></span><code>HibernateConstraintValidatorContext#addExpressionVariable(String, Object)</code><span><span>
+使用或</span><span>通过表达式语言消息插值工具为插值设置任意参数</span></span><code>HibernateConstraintValidatorContext#addMessageParameter(String, Object)</code><span><span>。</span></span></p>
+<div>
+<p><span><span>示例 155. 自定义</span></span><code>@Future</code><span><span>验证器注入表达式变量</span></span></p>
+<div>
+<div>
+<div>
+<pre>package org.hibernate.validator.referenceguide.chapter12.context;<font></font>
+<font></font>
+public class MyFutureValidator implements ConstraintValidator&lt;Future, Instant&gt; {<font></font>
+<font></font>
+    @Override<font></font>
+    public void initialize(Future constraintAnnotation) {<font></font>
+    }<font></font>
+<font></font>
+    @Override<font></font>
+    public boolean isValid(Instant value, ConstraintValidatorContext context) {<font></font>
+        if ( value == null ) {<font></font>
+            return true;<font></font>
+        }<font></font>
+<font></font>
+        HibernateConstraintValidatorContext hibernateContext = context.unwrap(<font></font>
+                HibernateConstraintValidatorContext.class<font></font>
+        );<font></font>
+<font></font>
+        Instant now = Instant.now( context.getClockProvider().getClock() );<font></font>
+<font></font>
+        if ( !value.isAfter( now ) ) {<font></font>
+            hibernateContext.disableDefaultConstraintViolation();<font></font>
+            hibernateContext<font></font>
+                    .addExpressionVariable( "now", now )<font></font>
+                    .buildConstraintViolationWithTemplate( "Must be after ${now}" )<font></font>
+                    .addConstraintViolation();<font></font>
+<font></font>
+            return false;<font></font>
+        }<font></font>
+<font></font>
+        return true;<font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p><span><span>示例 156. 自定义</span></span><code>@Future</code><span><span>验证器注入消息参数</span></span></p>
+<div>
+<div>
+<div>
+<pre>package org.hibernate.validator.referenceguide.chapter12.context;<font></font>
+<font></font>
+public class MyFutureValidatorMessageParameter implements ConstraintValidator&lt;Future, Instant&gt; {<font></font>
+<font></font>
+    @Override<font></font>
+    public void initialize(Future constraintAnnotation) {<font></font>
+    }<font></font>
+<font></font>
+    @Override<font></font>
+    public boolean isValid(Instant value, ConstraintValidatorContext context) {<font></font>
+        if ( value == null ) {<font></font>
+            return true;<font></font>
+        }<font></font>
+<font></font>
+        HibernateConstraintValidatorContext hibernateContext = context.unwrap(<font></font>
+                HibernateConstraintValidatorContext.class<font></font>
+        );<font></font>
+<font></font>
+        Instant now = Instant.now( context.getClockProvider().getClock() );<font></font>
+<font></font>
+        if ( !value.isAfter( now ) ) {<font></font>
+            hibernateContext.disableDefaultConstraintViolation();<font></font>
+            hibernateContext<font></font>
+                    .addMessageParameter( "now", now )<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .buildConstraintViolationWithTemplate( "必须在 {now} 之后" )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .addConstraintViolation();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            返回假；</font></font><font></font>
+        }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回真；</font></font><font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>除了语法之外，消息参数和表达式变量之间的主要区别在于消息参数只是简单的内插，而表达式变量是使用表达式语言引擎解释的。</span><span>实际上，如果您不需要表达式语言的高级功能，请使用消息参数。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span></span><code>addExpressionVariable(String, Object)</code><span><span>请注意，通过和
+</span><span>指定的参数</span></span><code>addMessageParameter(String, Object)</code><span><span>是全局的，适用于此调用创建的所有约束违规</span></span><code>isValid()</code><span><span>。</span><span>这包括默认约束违规，但也包括</span></span><code>ConstraintViolationBuilder</code><span><span>. </span><span>但是，您可以在调用之间更新参数
+</span></span><code>ConstraintViolationBuilder#addConstraintViolation()</code><span><span>。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+<li>
+<p><span><span>设置一个任意的动态负载 - 参见</span></span><a href="#section-dynamic-payload"><span><span>第 12.8 节，“动态负载作为一部分</span></span><code>ConstraintViolation</code><span><span>”</span></span></a></p>
+</li>
+</ul>
+</div>
+<p><span><span>默认情况下，表达式语言插值因自定义违规而</span></span><strong><span><span>禁用</span></span></strong><span><span>，这是为了避免任意代码执行或敏感数据泄漏（如果消息模板是根据不正确转义的用户输入构建的）。</span></span></p>
+<p><span><span>可以为给定的自定义违规启用表达式语言，</span></span><code>enableExpressionLanguage()</code><span><span>方法如下例所示：</span></span></p>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公共类 SafeValidator 实现 ConstraintValidator&lt;ZipCode, String&gt; {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @覆盖</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public boolean isValid（字符串值，ConstraintValidatorContext 上下文）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        如果（值==空）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            返回真；</font></font><font></font>
+        }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        HibernateConstraintValidatorContext hibernateContext = context.unwrap(</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                HibernateConstraintValidatorContext.class );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        hibernateContext.disableDefaultConstraintViolation();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        如果（无效（值）））{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            休眠环境</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .addExpressionVariable( "validatedValue", value )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .buildConstraintViolationWithTemplate(“${validatedValue} 不是有效的邮政编码”)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .enableExpressionLanguage()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    .addConstraintViolation();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            返回假；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        }</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回真；</font></font><font></font>
+    }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私有布尔值无效（字符串值）{</font></font><font></font>
+        // ...<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回假；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+<p><span><span>在这种情况下，消息模板将由表达式语言引擎插入。</span></span></p>
+<p><span><span>默认情况下，启用表达式语言时仅启用变量插值。</span></span></p>
+<p><span><span>您可以使用 启用更多功能</span></span><code>HibernateConstraintViolationBuilder#enableExpressionLanguage(ExpressionLanguageFeatureLevel level)</code><span><span>。</span></span></p>
+<p><span><span>我们为表达式语言插值定义了几个级别的功能：</span></span></p>
+<div>
+<ul>
+<li>
+<p><code>NONE</code><span><span>：完全禁用表达式语言插值 - 这是自定义违规的默认设置。</span></span></p>
+</li>
+<li>
+<p><code>VARIABLES</code><span><span>：允许插值通过注入的变量</span></span><code>addExpressionVariable()</code><span><span>，资源包和对象的使用</span></span><code>formatter</code><span><span>。</span></span></p>
+</li>
+<li>
+<p><code>BEAN_PROPERTIES</code><span><span>：允许一切</span></span><code>VARIABLES</code><span><span>允许加上 bean 属性的插值。</span></span></p>
+</li>
+<li>
+<p><code>BEAN_METHODS</code><span><span>: 还允许执行 bean 方法。</span><span>如果处理不当，这可能会导致严重的安全问题，包括任意代码执行。</span></span></p>
+</li>
+</ul>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="警告"></i>
+</td>
+<td>
+<p><span><span>Using</span></span><code>addExpressionVariable()</code><span><span>是将变量注入表达式的唯一安全方法，如果您使用</span></span><code>BEAN_PROPERTIES</code><span><span>或</span></span><code>BEAN_METHODS</code><span><span>特征级别，这一点尤为重要。</span></span></p>
+<p><span><span>如果您通过简单地连接消息中的用户输入来注入用户输入，您将允许潜在的任意代码执行和敏感数据泄漏：如果用户输入包含有效表达式，它们将由表达式语言引擎执行。</span></span></p>
+<p><span></span><strong><span><span>这是您绝对不</span></span></strong><span><span>应该做的事情的示例</span><span>：</span></span></p>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公共类 UnsafeValidator 实现 ConstraintValidator&lt;ZipCode, String&gt; {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @覆盖</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public boolean isValid（字符串值，ConstraintValidatorContext 上下文）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        如果（值==空）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            返回真；</font></font><font></font>
+        }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        context.disableDefaultConstraintViolation();</font></font><font></font>
+<font></font>
+        HibernateConstraintValidatorContext hibernateContext = context.unwrap(<font></font>
+                HibernateConstraintValidatorContext.class );<font></font>
+        hibernateContext.disableDefaultConstraintViolation();<font></font>
+<font></font>
+        if ( isInvalid( value ) ) {<font></font>
+            hibernateContext<font></font>
+                    // THIS IS UNSAFE, DO NOT COPY THIS EXAMPLE<font></font>
+                    .buildConstraintViolationWithTemplate( value + " is not a valid ZIP code" )<font></font>
+                    .enableExpressionLanguage()<font></font>
+                    .addConstraintViolation();<font></font>
+<font></font>
+            return false;<font></font>
+        }<font></font>
+<font></font>
+        return true;<font></font>
+    }<font></font>
+<font></font>
+    private boolean isInvalid(String value) {<font></font>
+        // ...<font></font>
+        return false;<font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+<p><span><span>在上面的示例中，如果</span></span><code>value</code><span><span>可能是用户输入，包含有效表达式，表达式语言引擎将对其进行插值，从而可能导致不安全行为。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div>
+<h4 id="sr-toc-16"><a href="#_hibernatemessageinterpolatorcontext"></a>12.13.2. <code>HibernateMessageInterpolatorContext</code></h4>
+<p><span><span>Hibernate Validator 还提供了自定义扩展</span></span><code>MessageInterpolatorContext</code><span><span>，即
+</span></span><code>HibernateMessageInterpolatorContext</code><span><span>（参见</span></span><a href="#example-custom-message-interpolator-context"><span><span>示例 12.18，“ </span></span><code>HibernateMessageInterpolatorContext</code><span><span>”</span></span></a><span><span>）。</span><span>引入此子类型是为了更好地将 Hibernate Validator 集成到 Glassfish 中。</span><span>在这种情况下，根 bean 类型需要为消息资源包确定正确的类加载器。</span><span>如果您有任何其他用例，请告诉我们。</span></span></p>
+<div>
+<p><span><span>例 12.18：</span></span><code>HibernateMessageInterpolatorContext</code></p>
+<div>
+<div>
+<div>
+<pre>public interface HibernateMessageInterpolatorContext extends MessageInterpolator.Context {<font></font>
+<font></font>
+    /**<font></font>
+     * Returns the currently validated root bean type.<font></font>
+     *<font></font>
+     * @return The currently validated root bean type.<font></font>
+     */<font></font>
+    Class&lt;?&gt; getRootBeanType();<font></font>
+<font></font>
+    /**<font></font>
+     * @return the message parameters added to this context for interpolation<font></font>
+     *<font></font>
+     * @since 5.4.1<font></font>
+     */<font></font>
+    Map&lt;String, Object&gt; getMessageParameters();<font></font>
+<font></font>
+    /**<font></font>
+     * @return the expression variables added to this context for EL interpolation<font></font>
+     *<font></font>
+     * @since 5.4.1<font></font>
+     */<font></font>
+    Map&lt;String, Object&gt; getExpressionVariables();<font></font>
+<font></font>
+    /**<font></font>
+     * @return the path to the validated constraint starting from the root bean<font></font>
+     *<font></font>
+     * @since 6.1<font></font>
+     */<font></font>
+    Path getPropertyPath();<font></font>
+<font></font>
+    /**<font></font>
+     * @return the level of features enabled for the Expression Language engine<font></font>
+     *<font></font>
+     * @since 6.2<font></font>
+     */<font></font>
+    ExpressionLanguageFeatureLevel getExpressionLanguageFeatureLevel();<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-17"><a href="#section-paranamer-parameternameprovider"></a><span><span>12.14。</span><span>基于参数的</span></span><code>ParameterNameProvider</code></h3>
+<p><span><span>Hibernate Validator 带有一个</span></span><code>ParameterNameProvider</code><span><span>利用
+</span></span><a href="http://paranamer.codehaus.org/"><span><span>Paranamer</span></span></a><span><span> 库的实现。</span></span></p>
+<p><span><span>该库提供了几种在运行时获取参数名称的方法，例如，基于 Java 编译器创建的调试符号、在编译后步骤中将参数名称编织到字节码中的常量或注释（例如来自 JSR 330 的注释）</span></span><code>@Named</code><span><span>。</span></span></p>
+<p><span><span>为了使用，或者在引导验证器时传递一个实例</span><a href="#example-using-custom-parameter-name-provider"><span>，如例 9.10 “使用自定义</span></a><a href="#example-using-custom-parameter-name-provider"><span>”</span></a></span><code>ParanamerParameterNameProvider</code><span><span>所示，或者</span><span>在</span><em><span> META-INF/validation.xml</span></em><span> 文件中指定
+</span><span>为元素的值
+</span><span>。</span></span><a href="#example-using-custom-parameter-name-provider"><span></span><code>ParameterNameProvider</code><span></span></a><span></span><code>org.hibernate.validator.parameternameprovider.ParanamerParameterNameProvider</code><span></span><code>&lt;parameter-name-provider&gt;</code><span></span><em><span></span></em><span></span></p>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="提示"></i>
+</td>
+<td>
+<p><span><span>使用此参数名称提供程序时，您需要将 Paranamer 库添加到您的类路径中。</span><span>它在 Maven 中央存储库中可用 group id</span></span><code>com.thoughtworks.paranamer</code><span><span>和 artifact id </span></span><code>paranamer</code><span><span>。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<p><span><span>默认情况下，从在构建时（通过</span><span>）和调试符号（通过</span><span>）</span></span><code>ParanamerParameterNameProvider</code><span><span>添加到字节码的常量中检索参数名称。</span><span>或者，您可以在创建实例时指定</span><span>您选择的实现
+</span><span>。</span></span><code>DefaultParanamer</code><span></span><code>BytecodeReadingParanamer</code><span></span><code>Paranamer</code><span></span><code>ParanamerParameterNameProvider</code><span></span></p>
+</div><p></p><div>
+<h3 id="sr-toc-18"><a href="#section-constraint-definition-contribution"></a><span><span>12.15。</span><span>提供约束定义</span></span></h3>
+
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span><span>以下概念目前被认为是实验性的。</span><span>让我们知道您是否觉得它们有用以及它们是否满足您的需求。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div>
+<h4 id="sr-toc-19"><a href="#_constraint_definitions_via_serviceloader"></a><span><span>12.15.1。</span><span>约束定义通过</span></span><code>ServiceLoader</code></h4>
+<p><span><span>Hibernate Validator 允许利用 Java 的
+</span></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/?java/util/ServiceLoader.html"><span><span>ServiceLoader</span></span></a><span><span>
+机制来注册额外的约束定义。</span><span>您所要做的就是将文件
+</span></span><em><span><span>jakarta.validation.ConstraintValidator</span></span></em><span><span> 添加到</span></span><em><span><span> META-INF/services</span></span></em><span><span>。</span><span>在此服务文件中，您列出了约束验证器类的完全限定类名（每行一个）。</span><span>Hibernate Validator 将自动推断它们适用的约束类型。</span><span>
+有关示例，</span><span>请参阅</span></span><a href="#example-using-service-file-for-constraint-definitions"><span><span>通过服务文件定义约束。</span></span></a><span></span></p>
+<div>
+<p><span><span>示例 12.19：</span></span><em><span><span>META-INF/services/jakarta.validation.ConstraintValidator</span></span></em></p>
+<div>
+<div>
+<div>
+<pre># Assuming a custom constraint annotation @org.mycompany.CheckCase<font></font>
+org.mycompany.CheckCaseValidator<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>要为您的自定义约束提供默认消息，请将文件</span></span><em><span><span> ContributorValidationMessages.properties</span></span></em><span><span>
+和 / 或其特定于语言环境的特化放在 JAR 的根目录下。</span></span><em><span><span>除了在 ValidationMessages.properties</span></span></em><span><span> 中给出的条目之外，Hibernate Validator 还将考虑在类路径中找到的所有具有此名称的包中的条目</span><span>。</span></span></p>
+<p><span><span>这种机制在创建大型多模块应用程序时也很有用：不是将所有约束消息放入一个包中，您可以为每个模块创建一个资源包，只包含该模块的那些消息。</span></span></p>
+
+</div>
+<div>
+<h4 id="sr-toc-20"><a href="#section-programmatic-constraint-definition"></a><span><span>12.15.2。</span><span>以编程方式添加约束定义</span></span></h4>
+<p><span><span>虽然服务加载器方法适用于许多场景，但并非适用于所有场景（例如服务文件不可见的 OSGi），还有另一种提供约束定义的方法。</span><span>您可以使用编程约束声明 API - 请参阅
+</span></span><a href="#example-using-constraint-definition-api"><span><span>示例 12.20，“通过编程 API 添加约束定义”</span></span></a><span><span>。</span></span></p>
+<div>
+<p><span><span>示例 12.20：通过编程 API 添加约束定义</span></span></p>
+<div>
+<div>
+<div>
+<pre>ConstraintMapping constraintMapping = configuration.createConstraintMapping();<font></font>
+<font></font>
+constraintMapping<font></font>
+        .constraintDefinition( ValidPassengerCount.class )<font></font>
+        .validatedBy( ValidPassengerCountValidator.class );<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>如果您的验证器实现相当简单（即不需要从注释进行初始化，也</span></span><code>ConstraintValidatorContext</code><span><span>未使用），您还可以使用此替代 API 来使用 Lambda 表达式或方法引用来指定约束逻辑：</span></span></p>
+<div>
+<p><span><span>示例 12.21：使用 Lambda 表达式添加约束定义</span></span></p>
+<div>
+<div>
+<div>
+<pre>ConstraintMapping constraintMapping = configuration.createConstraintMapping();<font></font>
+<font></font>
+constraintMapping<font></font>
+        .constraintDefinition( ValidPassengerCount.class )<font></font>
+            .validateType( Bus.class )<font></font>
+                .with( b -&gt; b.getSeatCount() &gt;= b.getPassengers().size() );<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="提示"></i>
+</td>
+<td>
+<p>One use case for registering constraint definitions through the programmatic API is the ability to specify an alternative
+constraint validator for the <code>@URL</code> constraint. Historically, Hibernate Validator’s default constraint
+validator for this constraint uses the <code>java.net.URL</code> constructor to validate an URL.
+However, there is also a purely regular expression based version available which can be configured using
+a <code>ConstraintDefinitionContributor</code>:</p>
+<div>
+<p>Using the programmatic constraint declaration API to register a regular expression based constraint definition for <code>@URL</code></p>
+<div>
+<pre>ConstraintMapping constraintMapping = configuration.createConstraintMapping();<font></font>
+<font></font>
+constraintMapping<font></font>
+        .constraintDefinition( URL.class )<font></font>
+        .includeExistingValidators( false )<font></font>
+        .validatedBy( RegexpURLValidator.class );<font></font>
+</pre>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-21"><a href="#section-constraint-customizing-class-loading"></a>12.16. Customizing class-loading</h3>
+<p>There are several cases in which Hibernate Validator needs to load resources or classes given by name:</p>
+<div>
+<ul>
+<li>
+<p>XML descriptors (<em>META-INF/validation.xml</em> as well as XML constraint mappings)</p>
+</li>
+<li>
+<p><span><span>由 XML 描述符中的名称指定的类（例如自定义消息插值器等）</span></span></p>
+</li>
+<li>
+<p><span><span>ValidationMessages</span></span><em><span><span> 资源</span></span></em><span><span>包</span></span></p>
+</li>
+<li>
+<p><span></span><code>ExpressionFactory</code><span><span>用于基于表达式的消息插值的</span><span>实现</span></span></p>
+</li>
+</ul>
+</div>
+<p><span><span>默认情况下，Hibernate Validator 尝试通过当前线程上下文类加载器加载这些资源。</span><span>如果这不成功，Hibernate Validator 自己的类加载器将作为后备尝试。</span></span></p>
+<p><span><span>对于这种策略不合适的情况（例如 OSGi 等模块化环境），您可以提供特定的类加载器来在引导验证器工厂时加载这些资源：</span></span></p>
+<div>
+<p><span><span>示例 12.22：提供类加载器来加载外部资源和类</span></span></p>
+<div>
+<div>
+<div>
+<pre>Validator validator = Validation.byProvider( HibernateValidator.class )<font></font>
+        .configure()<font></font>
+        .externalClassLoader( classLoader )<font></font>
+        .buildValidatorFactory()<font></font>
+        .getValidator();<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>在 OSGi 的情况下，您可以例如从 bundle 引导 Hibernate Validator 或委托给等的自定义类加载器实现传递类的加载器</span></span><code>Bundle#loadClass()</code><span><span>。</span></span></p>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="笔记"></i>
+</td>
+<td>
+<p><span></span><code>ValidatorFactory#close()</code><span><span>如果不再需要给定的验证器工厂实例，则</span><span>调用。</span><span>如果不这样做，在重新部署应用程序 / 捆绑包并且应用程序代码仍引用未关闭的验证器工厂的情况下，可能会导致类加载器泄漏。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-22"><a href="#section-getter-property-selection-strategy"></a><span><span>12.17. </span><span>自定义 getter 属性选择策略</span></span></h3>
+<p><span><span>当一个 bean 被 Hibernate Validator 验证时，它的属性得到验证。</span><span>属性可以是字段或吸气剂。</span><span>默认情况下，Hibernate Validator 遵循 JavaBeans 规范，并在以下条件之一为真时将方法视为 getter：</span></span></p>
+<div>
+<ul>
+<li>
+<p><span><span>方法名以 开头</span></span><code>get</code><span><span>，它有一个非 void 返回类型并且没有参数；</span></span></p>
+</li>
+<li>
+<p><span><span>方法名称以 开头</span></span><code>is</code><span><span>，返回类型为</span></span><code>boolean</code><span><span>并且没有参数；</span></span></p>
+</li>
+<li>
+<p><span><span>方法名称以 开头</span></span><code>has</code><span><span>，返回类型为</span></span><code>boolean</code><span><span>并且没有参数（此规则特定于 Hibernate Validator，并且不是 JavaBeans 规范强制要求的）</span></span></p>
+</li>
+</ul>
+</div>
+<p><span><span>虽然这些规则在遵循经典的 JavaBeans 约定时通常是合适的，但可能会发生这种情况，尤其是对于代码生成器，未遵循 JavaBeans 命名约定并且 getter 的名称遵循不同的约定。</span></span></p>
+<p><span><span>在这种情况下，应该重新定义检测 getter 的策略，以便完全验证对象。</span></span></p>
+
+<div>
+<p><span><span>示例 12.23：使用非标准 getter 的类</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包 org.hibernate.validator.referenceguide.chapter12.getterselectionstrategy；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共课用户{</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私有字符串名字；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私有字符串姓氏；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私人字符串电子邮件；</font></font><font></font>
+<font></font>
+    // [...]<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @不是空的</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共字符串名字（）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回名字；</font></font><font></font>
+    }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @不是空的</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共字符串姓氏（）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回姓氏；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @电子邮件</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共字符串电子邮件（）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        回复邮件；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>如果此类对象得到验证，则不会对 getter 执行任何验证，因为标准策略未检测到它们。</span></span></p>
+<div>
+<p><span><span>示例 12.24：使用默认的 getter 属性选择策略验证具有非标准 getter 的类</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证器 validator = Validation.byProvider( HibernateValidator.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        。配置（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .buildValidatorFactory()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        .getValidator();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+User user = new User( "", "", "not an email" );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+设置&lt;ConstraintViolation&lt;User&gt;&gt; constraintViolations = validator.validate( user );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+// 因为 User 有非标准的 getter，所以不会触发违规</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+assertEquals( 0, constraintViolations.size() );</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>要使 Hibernate Validator 将此类方法视为属性，</span></span><code>GetterPropertySelectionStrategy</code><span><span>
+应配置自定义。</span><span>在这种特殊情况下，该策略的可能实施方式是：</span></span></p>
+<div>
+<p><span><span>示例 12.25：自定义</span></span><code>GetterPropertySelectionStrategy</code><span><span>实现</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包 org.hibernate.validator.referenceguide.chapter12.getterselectionstrategy；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共类 FluentGetterPropertySelectionStrategy 实现 GetterPropertySelectionStrategy {</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    private final Set&lt;String&gt; methodNamesToIgnore;</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共 FluentGetterPropertySelectionStrategy() {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        // 我们将忽略所有来自 Object 的方法名称</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        this.methodNamesToIgnore = Arrays.stream( Object.class.getDeclaredMethods() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .map(方法::getName)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .collect( Collectors.toSet() );</font></font><font></font>
+    }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @覆盖</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public Optional&lt;String&gt; getProperty(ConstrainableExecutable executable) {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        如果 ( methodNamesToIgnore.contains( executable.getName() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                || </font><font style="vertical-align: inherit;">executable.getReturnType() == void.class</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                || </font><font style="vertical-align: inherit;">executable.getParameterTypes().length &gt; 0 ) {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            返回 Optional.empty();</font></font><font></font>
+        }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回 Optional.of(executable.getName());</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @覆盖</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public List&lt;String&gt; getGetterMethodNameCandidates(String propertyName) {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        // 由于方法名 == 属性名，一个方法总是只有一个可能的名称</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回 Collections.singletonList( propertyName );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<p><span><span>示例 12.26：以</span></span><code>GetterPropertySelectionStrategy</code><span><span>编程方式配置自定义</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证器 validator = Validation.byProvider( HibernateValidator.class )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        。配置（）</font></font><font></font>
+        // Setting a custom getter property selection strategy<font></font>
+        .getterPropertySelectionStrategy( new FluentGetterPropertySelectionStrategy() )<font></font>
+        .buildValidatorFactory()<font></font>
+        .getValidator();<font></font>
+<font></font>
+User user = new User( "", "", "not an email" );<font></font>
+<font></font>
+Set&lt;ConstraintViolation&lt;User&gt;&gt; constraintViolations = validator.validate( user );<font></font>
+<font></font>
+assertEquals( 3, constraintViolations.size() );<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p><span></span><code>GetterPropertySelectionStrategy</code><span><span>示例 12.27：使用 XML 属性</span><span>配置自定义</span></span></p>
+<div>
+<div>
+<div>
+<pre>&lt;validation-config<font></font>
+        xmlns="https://jakarta.ee/xml/ns/validation/configuration"<font></font>
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<font></font>
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/validation/configuration<font></font>
+            https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd"<font></font>
+        version="3.0"&gt;<font></font>
+<font></font>
+    &lt;property name="hibernate.validator.getter_property_selection_strategy"&gt;<font></font>
+        org.hibernate.validator.referenceguide.chapter12.getterselectionstrategy.NoPrefixGetterPropertySelectionStrategy<font></font>
+    &lt;/property&gt;<font></font>
+<font></font>
+&lt;/validation-config&gt;<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<table>
+<tbody><tr>
+<td>
+<i title="警告"></i>
+</td>
+<td>
+<p><span><span>值得一提的是，在使用 添加编程约束的情况下
+</span></span><code>HibernateValidatorConfiguration#addMapping(ConstraintMapping)</code><span><span>，应始终在配置所需的 getter 属性选择策略后添加映射。</span><span>否则，默认策略将用于在定义策略之前添加的映射。</span></span></p>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div><p></p><div>
+<h3 id="sr-toc-23"><a href="#section-property-node-name-provider"></a><span><span>12.18。</span><span>自定义约束违规的属性名称解析</span></span></h3>
+<p><span><span>想象一下，我们有一个简单的数据类，它对</span></span><code>@NotNull</code><span><span>某些字段有约束：</span></span></p>
+<div>
+<p><span><span>例 12.28：Person 数据类</span></span></p>
+<div>
+<div>
+<div>
+<pre>public class Person {<font></font>
+    @NotNull<font></font>
+    @JsonProperty("first_name")<font></font>
+    private final String firstName;<font></font>
+<font></font>
+    @JsonProperty("last_name")<font></font>
+    private final String lastName;<font></font>
+<font></font>
+    public Person(String firstName, String lastName) {<font></font>
+        this.firstName = firstName;<font></font>
+        this.lastName = lastName;<font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+<p><span><span>例 12.29：将 Person 对象序列化为 JSON</span></span></p>
+<div>
+<div>
+<div>
+<pre>public class PersonSerializationTest {<font></font>
+    private final ObjectMapper objectMapper = new ObjectMapper();<font></font>
+<font></font>
+    @Test<font></font>
+    public void personIsSerialized() throws JsonProcessingException {<font></font>
+        Person person = new Person( "Clark", "Kent" );<font></font>
+<font></font>
+        String serializedPerson = objectMapper.writeValueAsString( person );<font></font>
+<font></font>
+        assertEquals( "{\"first_name\":\"Clark\",\"last_name\":\"Kent\"}", serializedPerson );<font></font>
+    }<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>正如我们所看到的，该对象被序列化为：</span></span></p>
+<div>
+<p><span><span>例 12.30：作为 json 的人</span></span></p>
+<div>
+<div>
+<div>
+<pre>{<font></font>
+  "first_name": "Clark",<font></font>
+  "last_name": "Kent"<font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>请注意属性的名称有何不同。</span><span>在 Java 对象中，我们有</span></span><code>firstName</code><span><span>and </span></span><code>lastName</code><span><span>，而在 JSON 输出中，我们有
+</span></span><code>first_name</code><span><span>and </span></span><code>last_name</code><span><span>。</span><span>我们通过</span></span><code>@JsonProperty</code><span><span>注释定制了这种行为。</span></span></p>
+<p><span><span>现在假设我们在 REST 环境中使用此类，用户可以</span><span>在请求正文中将</span></span><a href="#example-person-json"><span><span>实例</span></span><code>Person</code><span><span>作为 JSON 发送。</span></span></a><span><span>在指示验证失败的字段时，最好指示他们在 JSON 请求中使用的名称，</span></span><code>first_name</code><span><span>而不是我们在 Java 代码中内部使用的名称</span></span><code>firstName</code><span><span>。</span></span></p>
+<p><span><span>合同</span></span><code>org.hibernate.validator.spi.nodenameprovider.PropertyNodeNameProvider</code><span><span>允许我们这样做。</span><span>通过实现它，我们可以定义在验证期间如何解析属性的名称。</span><span>在我们的例子中，我们想从 Jackson 配置中读取值。</span></span></p>
+<p><span><span>如何做到这一点的一个例子是利用 Jackson API：</span></span></p>
+<div>
+<p><span><span>例 12.31：JacksonPropertyNodeNameProvider 实现</span></span></p>
+<div>
+<div>
+<div>
+<pre>import org.hibernate.validator.spi.nodenameprovider.JavaBeanProperty;<font></font>
+import org.hibernate.validator.spi.nodenameprovider.Property;<font></font>
+import org.hibernate.validator.spi.nodenameprovider.PropertyNodeNameProvider;<font></font>
+<font></font>
+import com.fasterxml.jackson.databind.BeanDescription;<font></font>
+import com.fasterxml.jackson.databind.JavaType;<font></font>
+import com.fasterxml.jackson.databind.ObjectMapper;<font></font>
+import com.fasterxml.jackson.databind.introspect.BeanPropertyDefinition;<font></font>
+<font></font>
+public class JacksonPropertyNodeNameProvider implements PropertyNodeNameProvider {<font></font>
+    private final ObjectMapper objectMapper = new ObjectMapper();<font></font>
+<font></font>
+    @Override<font></font>
+    public String getName(Property property) {<font></font>
+        if ( property instanceof JavaBeanProperty ) {<font></font>
+            return getJavaBeanPropertyName( (JavaBeanProperty) property );<font></font>
+        }<font></font>
+<font></font>
+        return getDefaultName( property );<font></font>
+    }<font></font>
+<font></font>
+    private String getJavaBeanPropertyName(JavaBeanProperty property) {<font></font>
+        JavaType type = objectMapper.constructType( property.getDeclaringClass() );<font></font>
+        BeanDescription desc = objectMapper.getSerializationConfig().introspect( type );<font></font>
+<font></font>
+        return desc.findProperties()<font></font>
+                .stream()<font></font>
+                .filter( prop -&gt; prop.getInternalName().equals( property.getName() ) )<font></font>
+                .map( BeanPropertyDefinition::getName )<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .findFirst()</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .orElse( property.getName() );</font></font><font></font>
+    }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私有字符串 getDefaultName（属性属性）{</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回 property.getName();</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font>
+}<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>在进行验证时：</span></span></p>
+<div>
+<p><span><span>例 12.32：JacksonPropertyNodeNameProvider 的使用</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公共类 JacksonPropertyNodeNameProviderTest {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @测试</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public void nameIsReadFromJacksonAnnotationOnField() {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                。配置（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .propertyNodeNameProvider( new JacksonPropertyNodeNameProvider() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                .buildValidatorFactory();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        验证器 validator = validatorFactory.getValidator();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        Person clarkKent = new Person( null, "Kent" );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        Set&lt;ConstraintViolation&lt;Person&gt;&gt; violations = validator.validate( clarkKent );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        ConstraintViolation&lt;Person&gt; violation = violations.iterator().next();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        assertEquals( violation.getPropertyPath().toString(), "first_name" );</font></font><font></font>
+    }<font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>我们可以看到属性路径现在返回了</span></span><code>first_name</code><span><span>。</span></span></p>
+<p><span><span>请注意，当注释位于吸气剂上时，这也有效：</span></span></p>
+<div>
+<p><span><span>示例 12.33：getter 上的注解</span></span></p>
+<div>
+<div>
+<div>
+<pre><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@测试</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+public void nameIsReadFromJacksonAnnotationOnGetter() {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            。配置（）</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .propertyNodeNameProvider( new JacksonPropertyNodeNameProvider() )</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            .buildValidatorFactory();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    验证器 validator = validatorFactory.getValidator();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    Person clarkKent = new Person( null, "Kent" );</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    Set&lt;ConstraintViolation&lt;Person&gt;&gt; violations = validator.validate( clarkKent );</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    ConstraintViolation&lt;Person&gt; violation = violations.iterator().next();</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    assertEquals( violation.getPropertyPath().toString(), "first_name" );</font></font><font></font>
+}<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+公共课人 {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私有最终字符串名字；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @JsonProperty("姓氏")</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    私有最终字符串姓氏；</font></font><font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    public Person(String firstName, String lastName) {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        this.firstName = firstName;</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        this.lastName = lastName;</font></font><font></font>
+    }<font></font>
+<font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @NotNull</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    @JsonProperty("名字")</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    公共字符串 getFirstName() {</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        返回名字；</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+    }</font></font><font></font><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+}</font></font><font></font>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><span><span>这只是我们想要更改属性名称解析方式的一个用例。</span></span></p>
+<p><code>org.hibernate.validator.spi.nodenameprovider.PropertyNodeNameProvider</code><span><span>可以实现以您认为合适的任何方式提供属性名称（例如，从注释中读取）。</span></span></p>
+<p><span><span>还有两个接口值得一提：</span></span></p>
+<div>
+<ul>
+<li>
+<p><code>org.hibernate.validator.spi.nodenameprovider.Property</code><span><span>是一个基本接口，用于保存有关属性的元数据。</span><span>它有一个</span></span><code>String getName()</code><span><span>方法可用于获取属性的 “原始” 名称。</span></span><a href="#example-jackson-property-node-name-provider"><span><span>该接口应该用作解析名称的默认方式（请参阅示例 12.31，“JacksonPropertyNodeNameProvider 实现”</span></span></a><span><span> 中的使用方式</span><span>）。</span></span></p>
+</li>
+<li>
+<p><code>org.hibernate.validator.spi.nodenameprovider.JavaBeanProperty</code><span><span>是一个接口，用于保存有关 bean 属性的元数据。</span><span>它扩展</span></span><code>org.hibernate.validator.spi.nodenameprovider.Property</code><span><span>并提供了一些额外的方法，例如</span></span><code>Class&lt;?&gt; getDeclaringClass()</code><span><span>
+返回作为属性所有者的类的方法。</span></span></p>
+</li>
+</ul>
+</div>
+</div><p></p></sr-rd-content>
+                            
+                            <sr-rd-footer>
+                                <sr-rd-footer-group>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                    <sr-rd-footer-text>全文完</sr-rd-footer-text>
+                                    <sr-rd-footer-line></sr-rd-footer-line>
+                                </sr-rd-footer-group>
+                                <sr-rd-footer-copywrite>
+                                    <div>本文由 <a href="http://ksria.com/simpread" target="_blank">简悦 SimpRead</a> 转码，用以提升阅读体验，<a href="https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-further-reading" target="_blank">原文地址 </a></div>
+                                </sr-rd-footer-copywrite>
+                            </sr-rd-footer>
+                        </sr-read>
+                    </body>
+                </html>
